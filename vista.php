@@ -3,7 +3,8 @@ include_once("./funciones/config.inc.php");
 include_once("./funciones/acceder_base_datos.php");
 include_once("./funciones/listar.php");
 $adatos;
-$adatos = recuperarInfoProducto($_GET["cid_producto"]);
+$id = $_GET["cid_producto"];
+$adatos = recuperarInfoProducto($id);
 
 ?>
 
@@ -13,6 +14,7 @@ $adatos = recuperarInfoProducto($_GET["cid_producto"]);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/agregar.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 
@@ -28,8 +30,26 @@ $adatos = recuperarInfoProducto($_GET["cid_producto"]);
       <font size="+1"> <b>Tallas: </b> <?php echo $adatos["talla1"]?> <?php echo $adatos["talla2"]?> <?php echo $adatos["talla3"]?>  <?php echo $adatos["talla4"]?>  <?php echo $adatos["talla5"]?> </font> <br />
         <font size="+1"> <b>Precio: </b><?php echo $adatos["precio"]?></font><br />
        <!-- <font size="+1"> <b> Disponibles: </b> <?php// echo $adatos["cantidad"]?> </font><br />--->
-        <input type="button" value="Agregar" name="agregar" id="agregar" class="agregar"/> <img src="imagenes/carrito.png" width="30px" height="20px">
-    
+        <div id="detalles_compra">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" class="cantidad"/>
+        <label for="talla">Talla:</label>
+        <select id="talla">
+            <?php
+                for($i = 1; $i < 6; $i++){
+                    if($adatos["talla"."$i"] != ""){
+                        echo '<option>'.$adatos["talla"."$i"].'</option>';
+                    }
+                }
+            ?>
+        </select><br/>
+        
+        <input type="button" value="Agregar" name="agregar" id="agregar" class="agregar"/>
+        <img src="imagenes/carrito.png" width="30px" height="20px">
+            <?php
+            echo '<input id="producto_id" type="hidden" value="'.$id.'"/>';
+            ?>
+        </div>
     </div>
 </div>
 

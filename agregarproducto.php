@@ -15,6 +15,7 @@ include_once("modelo.php");
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/validaciones.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
@@ -145,7 +146,7 @@ include_once("modelo.php");
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Agregar producto </h1>
-<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data">
+<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data" id="frm_agregar">
   <p align="center" class="estado"><?php echo agregarProducto(); ?></p>
 <div class="form">
  <table class="tabla1">
