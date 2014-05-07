@@ -99,7 +99,7 @@ function subirimagen(){
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
-  $limite_kb = 100;
+  $limite_kb = 900;
   
   if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -116,7 +116,7 @@ function subirimagen(){
       $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
       if ($resultado){
 		  $nombre = $_FILES['imagen']['name'];
-        @mysql_query("INSERT INTO producto (imagen) VALUES ('$nombre')") ;
+        //@mysql_query("INSERT INTO producto (imagen) VALUES ('$nombre')") ;
         echo "el archivo ha sido movido exitosamente";
       } else {
         echo "ocurrio un error al mover el archivo.";

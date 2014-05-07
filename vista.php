@@ -1,3 +1,11 @@
+<?php
+include_once("./funciones/config.inc.php"); 
+include_once("./funciones/acceder_base_datos.php");
+include_once("./funciones/listar.php");
+$adatos;
+$adatos = recuperarInfoProducto($_GET["cid_producto"]);
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -125,9 +133,20 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
+<div class="detalles_producto"> 
+	<img src="imagenes/<?php echo $adatos["imagen"] ?>" width= "250px" height= "250px"/>
+    <div id="detalles">
+        <font size="+1"> <b>Modelo: </b>  <?php echo $adatos["modelo"]?> </font><br />
+        <font size="+1"> <b>Color: </b> <?php echo $adatos["color"]?> </font><br />
+        <font size="+1"> <b>Talla: </b> <?php echo $adatos["talla"]?></font> <br />
+        <font size="+1"> <b>Precio: </b> $<?php echo $adatos["precio"]?></font><br />
+        <font size="+1"> <b> Disponibles: </b> <?php echo $adatos["cantidad"]?> </font><br />
+        <input type="button" value="Agregar" name="agregar" id="agregar" class="agregar"/> <img src="imagenes/carrito.png" width="30px" height="20px">
+    
+    </div>
+</div>
 
-
+<?php //echo $adatos["id"]?>
 <!-- InstanceEndEditable -->
         </div>
         

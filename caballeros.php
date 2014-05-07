@@ -1,3 +1,9 @@
+<?php
+	include_once("./funciones/config.inc.php"); 
+	include_once("./funciones/acceder_base_datos.php");
+	include_once("./funciones/listar.php"); 
+	session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -125,9 +131,21 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
+<div class="panelIzquierda">
+    <ul>
+        <li> <a href="../guayaberascaballeros.php">Guayaberas</a></li>
+        <li> <a href="../pantalonescaballeros.php">Pantalones</a></li>
+        <li> <a href="../zapatoscaballeros.php">Zapatos</a></li>
+    </ul>
+</div>
 
+<h1>Guayaberas</h1>
 
+<div class="productos">
+<ul class="lista_productos">
+<?php echo listarProductos(); ?>
+</ul>
+</div>
 <!-- InstanceEndEditable -->
         </div>
         

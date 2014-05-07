@@ -57,19 +57,46 @@ function insertarDatos($cquery, $pconector){
  return $lentrada_creada;
 }
 //--------------------------------
-function extraerRegistro($cquery, $pconector){
+function extraerRegistro($pconector, $cquery){
 
-//Lee información solicitada (a través de una sentencia SQL) de la base de datos y la almacena
-//en un arreglo que devuelve como parámetro de salida
-//Advertencia: utilizar esta función únicamente cuando se espere un sólo registro como resultado
-
-
+	//Lee información solicitada (a través de una sentencia SQL) de la base de datos y la almacena
+	//en un arreglo que devuelve como parámetro de salida
+	//Advertencia: utilizar esta función únicamente cuando se espere un sólo registro como resultado
+	
+	$aregistro = array();
+	
+	$lresult = mysql_query($cquery, $pconector);
+	
+	if (!$lresult){ 
+		$cerror = "No fue posible recuperar la información de la base de datos.<br>";
+		$cerror .= "SQL: $cquery <br>";
+		$cerror .= "Descripción: ".mysqli_connect_error($pconector);
+		die($cerror);    
+	}
+	else{
+		if (mysql_num_rows($lresult) == 1){          
+			$aregistro = mysql_fetch_array($lresult);    
+		}
+	}
+	reset($aregistro);
+	return $aregistro; 
 }
+
 //--------------------------------
-function editarDatos($cquery, $pconector){
+function editarDatos($pconector, $cquery){
 
  //Modifica, edita o actualiza uno o más registros de la base de datos
- 
+ $ledicion_completada = false; 
+  $lresult = mysql_query($cquery, $pconector);
+ if (!$lresult){
+   $cerror = "Ocurrió un error al acceder a la base de datos.<br>";
+   $cerror .= "SQL: $cquery <br>";
+   $cerror .= "Descripción: ". mysqli_connect_error($pconector);
+   die($cerror);
+ }
+ else 
+   $ledicion_completada = true; 
+     
+ return $ledicion_completada;
 }
-//--------------------------------
 ?>

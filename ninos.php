@@ -5,8 +5,8 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <!-- InstanceBeginEditable name="doctitle" -->
-<title>Tienda Alux</title>
-<!-- InstanceEndEditable -->
+    <title>Tienda Alux</title>
+    <!-- InstanceEndEditable -->
     <script>
        pic1 = new Image();
        pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
@@ -18,7 +18,7 @@
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
     <!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+    <!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -124,11 +124,7 @@
         </div> 
         
         <div id="content">
-        <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
-
-
-<!-- InstanceEndEditable -->
+        <!-- InstanceBeginEditable name="RegionParaEditar" -->RegionParaEditar<!-- InstanceEndEditable -->
         </div>
         
         <div id="footer">

@@ -125,9 +125,7 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
-
-
+<h1>Guayaberas para niños</h1>
 <!-- InstanceEndEditable -->
         </div>
         

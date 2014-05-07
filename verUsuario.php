@@ -1,3 +1,12 @@
+<?php
+include_once("./funciones/config.inc.php"); 
+include_once("./funciones/acceder_base_datos.php");
+include_once("./funciones/listar.php");
+$adatos;
+$adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
+?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -125,7 +134,64 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
+
+<div class="form">
+ <table class="tabla1">
+ <h2>Datos Personales</h2>
+
+<tr> </tr>
+<br />
+<td>ID:</td> <td> <?php echo $adatos["id"]?></td>
+<tr> </tr>
+<td>Nombre:</td> <td> <?php echo $adatos["nombre"]?></td>
+<tr> </tr>
+<td>Apellidos:</td> <td><?php echo $adatos["apellido"]?></td>
+<tr> </tr>
+<td>Email:</td> <td><?php echo $adatos["email"]?> </td>
+<tr> </tr>
+<td>Telefono:</td> <td><?php echo $adatos["telefono"]?> </td>
+<tr> </tr>
+<td>Fax:</td> <td><?php echo $adatos["fax"]?></td>
+</table>
+</div>
+
+<div class="form">
+ <table class="tabla1">
+ <h2>Dirección</h2>
+<tr> </tr>
+<br />
+<td>Empresa:</td> <td><?php echo $adatos["empresa"]?></td>
+<tr> </tr>
+<td>Dirección:</td> <td><?php echo $adatos["direccion"]?></td>
+<tr> </tr>
+<td>Codigo postal:</td> <td><?php echo $adatos["cp"]?></td>
+<tr></tr>
+<td>País:</td> 
+<td><?php echo $adatos["pais"]?> </td>
+
+</table>
+</div>
+<div class="form">
+ <table class="tabla1">
+ <h2>Datos de Usuario</h2>
+<th>Datos Obligatorios </th>
+<tr> </tr>
+<br />
+<td>Usuario:</td> <td> <?php echo $adatos["usuario"]?></td>
+<tr> </tr>
+<td>Contraseña:</td> <td><?php echo $adatos["contrasena"]?></td>
+
+
+</table>
+</div>
+<div class="boton" align="center">
+<a href="usuarios.php"> <input type="button" name="btn_grabar" value="Regresar" id="btn_grabar"/> </a>
+</div>
+
+<br />
+
+
+
 
 
 <!-- InstanceEndEditable -->

@@ -13,4 +13,5 @@ $GLOBALS["base_datos"] = "alux";
 
 //Parámetros para la resolución de urls
 //$GLOBALS["raiz_sitio"] = "http://148.209.67.35/sitioslis/rortiz/control_clase1/";
+$GLOBALS["raiz_sitio"] = "http://localhost/Alux/";
 ?>

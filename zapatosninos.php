@@ -125,10 +125,10 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Devoluciones</h1>
 
 
-<!-- InstanceEndEditable -->
+
+<h1>Zapatos para niño</h1><!-- InstanceEndEditable -->
         </div>
         
         <div id="footer">
