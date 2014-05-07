@@ -524,3 +524,15 @@ div.derecha2{
 #detalles_compra{
     text-align: left;
 }
+
+.errorClas{
+    background-color: #cc6666;
+}
+
+#errorDiv{
+    color: red;
+}
+
+.errorFeedback{
+    visibility: hidden;
+}

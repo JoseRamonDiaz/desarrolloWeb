@@ -147,6 +147,7 @@ include_once("modelo.php");
 
 <h1>Agregar producto </h1>
 <form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data" id="frm_agregar">
+    <div id="errorDiv"></div>
   <p align="center" class="estado"><?php echo agregarProducto(); ?></p>
 <div class="form">
  <table class="tabla1">
@@ -155,9 +156,13 @@ include_once("modelo.php");
 
 <tr> </tr>
 <br />
-<td><span >*</span>Nombre del producto:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/></td>
+<td><span >*</span>Nombre del producto:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/>
+    <span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Precio:</td> <td><input type="text"  name="precio" value="<?php echo (isset($_POST["precio"]))?$_POST["precio"]:""; ?>" id="precio"/></td>
+<td><span >*</span>Precio:</td> <td><input type="text"  name="precio" value="<?php echo (isset($_POST["precio"]))?$_POST["precio"]:""; ?>" id="precio"/>
+<span id="precioError" class="errorFeedback errorSpan">El precio es incorrecto</span>
+</td>
 <tr> </tr>
 <td><span >*</span>Categoria:</td> 
 <td> 
@@ -165,6 +170,7 @@ include_once("modelo.php");
           <option value="0"></option>
           <?php echo listarTipos(); ?>
         </select>
+    <span id="tipo_idError" class="errorFeedback errorSpan">Por favor seleccione una categoria</span>
 </td>
 
 <tr> </tr>
@@ -174,10 +180,13 @@ include_once("modelo.php");
           <option value="0" ></option>
           <?php echo utf8_encode(  listarmodelos()); ?>
         </select>
+    <span id="modelo_idError" class="errorFeedback errorSpan">Por favor seleccione un modelo</span>
 </td>
 <tr> </tr>
 
-<td>talla 1:</td> <td><input type="text" name="talla1" id="talla1" value="<?php echo (isset($_POST["talla1"]))?$_POST["talla1"]:""; ?>" /> </td>
+<td>talla 1:</td> <td><input type="text" name="talla1" id="talla1" value="<?php echo (isset($_POST["talla1"]))?$_POST["talla1"]:""; ?>" />
+<span id="talla1Error" class="errorFeedback errorSpan">La talla es incorrecta</span>
+</td>
 
 <tr> </tr>
 
@@ -213,13 +222,19 @@ include_once("modelo.php");
 
 
 <tr> </tr>
-<td><span >*</span>Colores:</td> <td><input type="text" name="color" id="color" value="<?php echo (isset($_POST["color"]))?$_POST["color"]:""; ?>" /> </td>
+<td><span >*</span>Colores:</td> <td><input type="text" name="color" id="color" value="<?php echo (isset($_POST["color"]))?$_POST["color"]:""; ?>" />
+    <span id="colorError" class="errorFeedback errorSpan">El color es incorrecto</span>
+</td>
 <!---<tr> </tr>
 <td><span >*</span>Cantidad:</td> <td><input type="text" name="cantidad" id="cantidad" value="<?php // echo (isset($_POST["cantidad"]))?$_POST["cantidad"]:""; ?>" /> </td> --->
 <tr> </tr>
-<td><span >*</span>Descripcion:</td> <td> <textarea  wrap="soft" name="des"> </textarea></td>
+<td><span >*</span>Descripcion:</td> <td> <textarea  wrap="soft" name="des" id="descripcion"></textarea>
+    <span id="descripcionError" class="errorFeedback errorSpan">Por favor introduzca una descripción</span>
+</td>
 <tr> </tr>
-<td> <span >*</span>Imagen:</td> <td><input type="file" name="imagen" id="imagen" /> </td>
+<td> <span >*</span>Imagen:</td> <td><input type="file" name="imagen" id="imagen" />
+    <span id="imagenError" class="errorFeedback errorSpan">Por favor introduzca una imagen</span>
+</td>
 </table>
 </div>
 <div class="boton" align="center">
