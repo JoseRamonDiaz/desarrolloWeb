@@ -1,0 +1,341 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+	
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url('../imagenes/plantillla.png') top repeat-x;
+	
+	}
+body {
+
+background:#ffffff url('../imagenes/fondo.png') center repeat;
+
+margin:0;
+padding:0;
+}
+
+#centro{
+background-color:#FFF;
+width:478px;
+margin-left:220px;
+
+}
+
+
+	
+#container{
+	width: 980px;
+	height:912px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	
+		}
+		
+.Inicio {
+
+width:100%;
+height:40px;
+}
+	
+a{
+text-decoration: none;
+color:#FFFFFF;
+font-size:16px;
+}
+
+#bienvenido{
+text-align:right;
+float:right;
+margin-top:-20px;
+}
+		
+.header{
+	height: 87px;
+	margin-bottom: 7px;
+	padding-bottom: 4px;
+	position: relative;
+	z-index: 99;
+}
+
+#logo{
+float:left;
+	
+	}
+	
+#carrito{
+	position: absolute;
+	top: 0px;
+	right: 315px;
+	z-index: 9;
+	min-width: 300px;
+	
+	}
+		#botonbusqueda{
+  position: absolute;
+left: 0px;
+width: 28px;
+height: 24px;
+border-right: 1px solid #000;
+cursor: pointer;
+background: url('../imagenes/button-search.png') no-repeat scroll center center transparent;
+ 
+}
+#busqueda{
+	position: absolute;
+top: 15px;
+right: 0px;
+width: 298px;
+z-index: 15;
+	
+	}
+
+		
+	
+#busqueda input {
+	
+    color: #fff;
+	background: #333;
+	padding: 1px 1px 1px 33px;
+	width: 262px;
+	height: 21px;
+	border: 1px solid #000;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-khtml-border-radius: 6px 6px 6px 6px;
+	border-radius: 6px 6px 6px 6px;	
+}
+
+	#menuprincipal{
+		
+		background: url('../imagenes/menu.png') repeat-x scroll 0% 0% transparent;
+height: 45px;
+	margin-bottom: 15px;
+	padding: 0px 5px;
+		}
+		
+		#bienvenido{
+			
+	margin-top: -60px;
+	padding: 0px 5px;
+			}
+	
+	.menu{
+		
+    list-style:none;
+	padding:0px;
+	margin:0px;
+}
+.menu li{
+	margin:0px;
+	padding:0px;
+	float:left;
+	position:relative;
+		
+}
+.menu li a{
+	
+	width: 100px;
+	height: 30px;
+	padding: 6px;
+	line-height:30px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	
+	position: relative;
+	
+ 
+}
+.menu li a:hover{
+	color:#CF3;
+	
+}
+
+.menu ul{
+    position:absolute;
+	left:10px;
+	top:32px;
+	margin:0px;
+	list-style:none;
+	padding:0px;
+	opacity:0;
+	display:none;
+	transition:opacity .35s ease .2s;
+	-webkit-transition:opacity .35s ease .2s;
+	-moz-transition:opacity .60s ease .10s;
+	-o-transition:opacity .35s ease .2s;
+    background: url('../imagenes/menu.png');	
+}
+.menu ul li a{
+	
+	
+	text-align:left;
+}
+
+
+
+.menu li:hover ul{
+    opacity:1;
+	visibility:visible;
+  display:block;
+  transition:12s;
+	
+}
+
+#categoria{
+	text-align:center;
+	/*border: 1px solid #00F;*/
+	/*background-color:#FFF;*/
+	background-color:#749d2b;
+	float:left;
+	margin-top:-380px;
+	
+	}
+#tituloCategoria{
+	text-align:center;
+	background: url('../imagenes/menu.png');
+	color:#000;
+	}
+	
+#contenidocategoria{
+	text-align:left;
+
+
+}
+		
+#contenido ul a{
+	text-align:center;
+	margin: 0 auto, 0 auto;
+list-style: none outside none;
+text-decoration: none;
+color:#FFF;
+}
+
+#contenido ul {
+	padding-right:30px;
+	
+	}
+#contenido li:hover{
+
+background-color:#390;
+
+}			
+#contenido li{
+list-style: none outside none;
+text-decoration: none;
+
+}
+
+#cuenta{
+	 background-color:#749d2b;
+	float:right;
+	margin-top:-380px;
+	}
+#tituloCuenta{
+	text-align:center;
+	background: url('../imagenes/menu.png');
+	color:#000;
+	}
+	
+#contenidocuenta{
+	text-align:center;
+
+}
+		
+#contenidos ul a{
+list-style: none outside none;
+text-decoration: none;
+color:#FFF;
+}
+	#contenidos ul{
+		text-align:center;
+		padding-right:30px;
+		}		
+#contenidos li{
+list-style: none outside none;
+text-decoration: none;
+}
+#contenidos li:hover{
+	background-color:#390;
+	}
+
+#footer {
+    clear: both;
+    overflow: auto;
+    min-height: 100px;
+    padding: 20px;
+    border: 1px solid #FFF;
+    background: url('../imagenes/footer.jpg') no-repeat scroll center top transparent;
+}
+
+#footer .column {
+    float: left;
+    width: 19%;
+    min-height: 100px;
+    border-right: 1px solid #AAA;
+    margin-left: 3px;
+}
+
+#datos input[type:text]{
+	text-align:left;
+	}
+	
+.form{
+	width:700px;
+border: 1px solid #EEE
+	}
+table.tabla1{
+
+border-collapse: collapse;
+margin-bottom: 20px;
+	}
+	
+.boton{
+			width:700px;
+border: 1px solid #EEE
+		}
+		
+span{
+	color:#F00;
+	}
+			
+			
+#carrito{
+	margin-top:50px;			
+		}
+		
+div.derecha{
+	margin-top:-150px;
+		width:200px;
+		text-align:center;
+		float:right;
+		margin-right:550px;
+		/*margin-left:120px;
+		margin-bottom:10px;*/
+		
+	}
+	
+	.producto{
+		width:200px;
+		}
+		
+		.agregar{
+			background-image:url(../imagenes/menu.png);
+			color:#FFF;
+			}
+			
+label{
+	display: block;	
+	color: #000;
+}
+
+#tablaCarrito{
+	width: 500px;
+	border: 0;
+}
+
+#img_eliminar{
+	width: 25px;
+}
