@@ -2,7 +2,8 @@
 /* CSS Document */
 
 body {
-	background-color:#FFF8CD;
+	/*background-color:#FFF8CD;*/
+	background-image:radial-gradient(circle,#ffffff, #FFF8CD);
 	margin:0;
 	padding:0;
 	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
@@ -71,7 +72,7 @@ a{
 	width: 28px;
 	height: 24px;
 	border-right: 1px solid #000;
-	cursor: pointer;
+	/*cursor: pointer;*/
 	background: url('../imagenes/button-search.png') no-repeat scroll center center transparent;
 }
 
@@ -382,12 +383,13 @@ color:#FFF;
 color:#749d2b;}
 				
 .tabla {
-	margin-left:50px;
+	
 	border-radius: 15px;
 	border-spacing:0;
 	border:solid;
 	border-color:#6C9328;
 }
+
 	
 .tabla td{
 	font-size:18px;
@@ -417,9 +419,10 @@ th.ultimo{
 	
 	#cuenta2{
 	 background-color:#749d2b;
+	 position:static;
 	 opacity:0.8;
 	float:right;
-	margin-top:-215px;
+	margin-top:-366px;
 	}
 	
 	label{
@@ -492,4 +495,32 @@ div.derecha2{
 
 .panelIzquierda a:hover{
 	color:#CF3;
+}
+
+.detalles_producto2{
+	margin: 0 20%;
+	margin-top:20px;
+	background-color:#CBFFAE;
+	padding:20px;
+	border-radius:15px;
+	width: 550px;
+	border:solid;
+	border-color:#78A71A;
+}
+
+.detalles_producto2 #detalles2{
+	display:inline-block;
+	position:relative;
+	padding-left:100px;
+	bottom: 70px;
+}
+
+#detalles3{
+	
+	color:#CC6;
+	background-color:#00F;
+	}
+        
+#detalles_compra{
+    text-align: left;
 }

@@ -1,10 +1,10 @@
 <?php
-include_once("mantener_sesion.php");
+include_once("funciones/mantener_sesion.php");
 validarSesion();
 
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
-include_once("agregar.php");
+include_once("funciones/agregar.php");
 include_once("modelo.php");
 
 
@@ -15,6 +15,7 @@ include_once("modelo.php");
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/validaciones.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
@@ -67,13 +68,17 @@ include_once("modelo.php");
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>
-                            		<li><a href="usuarios.php">Usuarios</a></li>
+                        ?>    <li> 
+                            		<a href="usuarios.php">Usuarios</a> </li>
+                                
+                                    
+                                    
+                                   
                             		<li><a href="agregarproducto.php">Productos</a></li>
 						<?php
                         		}
                         ?>
-                            	<li> <a href="perfil.php">Perfil</a></li>
+                            	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
                             	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
@@ -94,7 +99,10 @@ include_once("modelo.php");
                 <div id=carrito ><img  src="imagenes/carrito.png" width="100" height="80" /> </div>
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
-                    <input type="text" onkeydown="this.style.color = '#000000';" onclick="this.value = '';" value="Búsqueda" name="filter_name"/>
+                    <FORM METHOD=GET ACTION="buscar.php ">
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+</FORM>
+   
                 </div>
             </div>
             
@@ -138,7 +146,7 @@ include_once("modelo.php");
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Agregar producto </h1>
-<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data">
+<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data" id="frm_agregar">
   <p align="center" class="estado"><?php echo agregarProducto(); ?></p>
 <div class="form">
  <table class="tabla1">
@@ -168,11 +176,46 @@ include_once("modelo.php");
         </select>
 </td>
 <tr> </tr>
-<td><span >*</span>Talla:</td> <td><input type="text" name="talla" id="talla" value="<?php echo (isset($_POST["talla"]))?$_POST["talla"]:""; ?>" /> </td>
+
+<td>talla 1:</td> <td><input type="text" name="talla1" id="talla1" value="<?php echo (isset($_POST["talla1"]))?$_POST["talla1"]:""; ?>" /> </td>
+
 <tr> </tr>
-<td><span >*</span>Color:</td> <td><input type="text" name="color" id="color" value="<?php echo (isset($_POST["color"]))?$_POST["color"]:""; ?>" /> </td>
+
+<td>Cantidad disponible en talla 1:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo (isset($_POST["cantidad1"]))?$_POST["cantidad1"]:""; ?>" /> </td>
+
 <tr> </tr>
-<td><span >*</span>Cantidad:</td> <td><input type="text" name="cantidad" id="cantidad" value="<?php echo (isset($_POST["cantidad"]))?$_POST["cantidad"]:""; ?>" /> </td>
+<td> talla 2:</td> <td><input type="text" name="talla2" id="tallaS" value="<?php echo (isset($_POST["talla2"]))?$_POST["talla2"]:""; ?>" /> </td>
+
+<tr> </tr>
+
+<td>Cantidad disponible en talla 2:</td> <td><input type="text" name="ctalla2" id="tallaXS" value="<?php echo (isset($_POST["cantidad2"]))?$_POST["cantidad2"]:""; ?>" /> </td>
+
+
+<tr> </tr>
+<td> talla 3:</td> <td><input type="text" name="talla3" id="tallaM" value="<?php echo (isset($_POST["talla3"]))?$_POST["talla3"]:""; ?>" /> </td>
+
+<tr> </tr>
+
+<td>Cantidad disponible en talla 3:</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo (isset($_POST["cantidad3"]))?$_POST["cantidad3"]:""; ?>" /> </td>
+
+<tr> </tr>
+<td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo (isset($_POST["talla4"]))?$_POST["talla4"]:""; ?>" /> </td>
+
+<tr> </tr>
+
+<td>Cantidad disponible en talla 4:</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo (isset($_POST["cantidad4"]))?$_POST["cantidad4"]:""; ?>" /> </td>
+
+<tr> </tr>
+<td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo (isset($_POST["talla5"]))?$_POST["talla5"]:""; ?>" /> </td>
+
+<tr> </tr>
+<td>Cantidad disponible en talla 5:</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo (isset($_POST["cantidad5"]))?$_POST["cantidad5"]:""; ?>" /> </td>
+
+
+<tr> </tr>
+<td><span >*</span>Colores:</td> <td><input type="text" name="color" id="color" value="<?php echo (isset($_POST["color"]))?$_POST["color"]:""; ?>" /> </td>
+<!---<tr> </tr>
+<td><span >*</span>Cantidad:</td> <td><input type="text" name="cantidad" id="cantidad" value="<?php // echo (isset($_POST["cantidad"]))?$_POST["cantidad"]:""; ?>" /> </td> --->
 <tr> </tr>
 <td><span >*</span>Descripcion:</td> <td> <textarea  wrap="soft" name="des"> </textarea></td>
 <tr> </tr>
@@ -189,7 +232,7 @@ include_once("modelo.php");
         
         <div id="footer">
             <div class="column">
-              	<h3>Quiénes somos</h3>
+              	<h3>¿Quiénes somos?</h3>
               	<ul>
                 	<li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="historia.php">Historia de Yucatán</a></li>

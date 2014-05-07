@@ -18,7 +18,6 @@ include_once("acceder_base_datos.php");
    $cpais = $_POST["pais"];
   $cciudad = $_POST["city_txt"];
    $cusuario = $_POST["usuario"];
-     $cadmin = $_POST["admin"];
     $ccontrasena = (md5($_POST["contrasena"]));
    
       $cquery = "UPDATE usuario";
@@ -33,15 +32,14 @@ include_once("acceder_base_datos.php");
    $cquery .= " empresa = '$cempresa',";
    $cquery .= " cp = $ccp,";
    $cquery .= " pais = '$cpais',";
-   $cquery .= " ciudad = '$cciudad',";
-   $cquery .= " esAdmin= $cadmin";
+   $cquery .= " ciudad = '$cciudad'";
    $cquery .= " WHERE (id = '$cid_Usuario')";
    
    if ( editarDatos($pconexion, $cquery) )
-     $curl = "Location:".$GLOBALS["raiz_sitio"]."usuarios.php";  
+     $curl = "Location:".$GLOBALS["raiz_sitio"]."perfil.php?cidusuario=$cusuario";  
    else
      $curl =
-"Location:".$GLOBALS["raiz_sitio"]."editarUsuario.php?cid_Usuario=$cid_Usuario";  
+"Location:".$GLOBALS["raiz_sitio"]."editarperfil.php?cidusuario=$cidusuario";  
     
    cerrarConexion($pconexion);
    header($curl);

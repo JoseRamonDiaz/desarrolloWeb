@@ -1,6 +1,12 @@
 <?php
-include_once("mantener_sesion.php");
+include_once("funciones/mantener_sesion.php");
+include_once("./funciones/config.inc.php"); 
+include_once("./funciones/acceder_base_datos.php");
+include_once("./funciones/listar.php");
 validarSesion();
+$adatos;
+$adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -61,13 +67,17 @@ validarSesion();
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>
-                            		<li><a href="usuarios.php">Usuarios</a></li>
+                        ?>    <li> 
+                            		<a href="usuarios.php">Usuarios</a> </li>
+                                
+                                    
+                                    
+                                   
                             		<li><a href="agregarproducto.php">Productos</a></li>
 						<?php
                         		}
                         ?>
-                            	<li> <a href="perfil.php">Perfil</a></li>
+                            	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
                             	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
@@ -88,7 +98,10 @@ validarSesion();
                 <div id=carrito ><img  src="imagenes/carrito.png" width="100" height="80" /> </div>
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
-                    <input type="text" onkeydown="this.style.color = '#000000';" onclick="this.value = '';" value="Búsqueda" name="filter_name"/>
+                    <FORM METHOD=GET ACTION="buscar.php ">
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+</FORM>
+   
                 </div>
             </div>
             
@@ -132,13 +145,75 @@ validarSesion();
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1>Perfil</h1>
 
+<div class="form">
+ <table class="tabla1">
+ <h2>Datos Personales</h2>
 
+<tr> </tr>
+<br />
+<td>ID:</td> <td> <?php echo $adatos["id"]?></td>
+<tr> </tr>
+<td>Nombre:</td> <td> <?php echo $adatos["nombre"]?></td>
+<tr> </tr>
+<td>Apellidos:</td> <td><?php echo $adatos["apellido"]?></td>
+<tr> </tr>
+<td>Email:</td> <td><?php echo $adatos["email"]?> </td>
+<tr> </tr>
+<td>Telefono:</td> <td><?php echo $adatos["telefono"]?> </td>
+<tr> </tr>
+<td>Fax:</td> <td><?php echo $adatos["fax"]?></td>
+</table>
+</div>
+
+<div class="form">
+ <table class="tabla1">
+ <h2>Dirección</h2>
+<tr> </tr>
+<br />
+<td>Empresa:</td> <td><?php echo $adatos["empresa"]?></td>
+<tr> </tr>
+<td>Dirección:</td> <td><?php echo $adatos["direccion"]?></td>
+<tr> </tr>
+<td>Codigo postal:</td> <td><?php echo $adatos["cp"]?></td>
+<tr></tr>
+<td>País:</td> 
+<td><?php echo $adatos["pais"]?> </td>
+
+<tr></tr>
+<td>Ciudad:</td> 
+<td><?php echo $adatos["ciudad"]?> </td>
+
+</table>
+</div>
+<div class="form">
+ <table class="tabla1">
+ <h2>Datos de Usuario</h2>
+<th>Datos Obligatorios </th>
+<tr> </tr>
+<br />
+<td>Usuario:</td> <td> <?php echo $adatos["usuario"]?></td>
+<tr> </tr>
+<td>Contraseña:</td> <td><?php echo $adatos["contrasena"]?></td>
+
+
+</table>
+</div>
+<div class="boton" align="center">
+<a href="usuarios.php"> <input type="button" name="volver" value="Regresar" id="volver"/> </a>
+<a href="./editarperfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> "> <input type="submit" value="Editar" name="editar" id="editar" /></a>
+</div>
+
+<br />
+
+
+
+ 
 <!-- InstanceEndEditable -->
         </div>
         
         <div id="footer">
             <div class="column">
-              	<h3>Quiénes somos</h3>
+              	<h3>¿Quiénes somos?</h3>
               	<ul>
                 	<li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="historia.php">Historia de Yucatán</a></li>

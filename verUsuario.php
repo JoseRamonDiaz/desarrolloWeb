@@ -4,6 +4,7 @@ include_once("./funciones/acceder_base_datos.php");
 include_once("./funciones/listar.php");
 $adatos;
 $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
+session_start();
 ?>
 
 
@@ -65,13 +66,17 @@ $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>
-                            		<li><a href="usuarios.php">Usuarios</a></li>
+                        ?>    <li> 
+                            		<a href="usuarios.php">Usuarios</a> </li>
+                                
+                                    
+                                    
+                                   
                             		<li><a href="agregarproducto.php">Productos</a></li>
 						<?php
                         		}
                         ?>
-                            	<li> <a href="perfil.php">Perfil</a></li>
+                            	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
                             	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
@@ -92,7 +97,10 @@ $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
                 <div id=carrito ><img  src="imagenes/carrito.png" width="100" height="80" /> </div>
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
-                    <input type="text" onkeydown="this.style.color = '#000000';" onclick="this.value = '';" value="Búsqueda" name="filter_name"/>
+                    <FORM METHOD=GET ACTION="buscar.php ">
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+</FORM>
+   
                 </div>
             </div>
             
@@ -169,6 +177,10 @@ $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
 <td>País:</td> 
 <td><?php echo $adatos["pais"]?> </td>
 
+<tr></tr>
+<td>Ciudad:</td> 
+<td><?php echo $adatos["ciudad"]?> </td>
+
 </table>
 </div>
 <div class="form">
@@ -185,11 +197,10 @@ $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
 </table>
 </div>
 <div class="boton" align="center">
-<a href="usuarios.php"> <input type="button" name="btn_grabar" value="Regresar" id="btn_grabar"/> </a>
+</a><a href="usuarios.php"> <input type="button" name="btn_grabar" value="Regresar" id="btn_grabar"/> </a>
 </div>
 
 <br />
-
 
 
 
@@ -199,7 +210,7 @@ $adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
         
         <div id="footer">
             <div class="column">
-              	<h3>Quiénes somos</h3>
+              	<h3>¿Quiénes somos?</h3>
               	<ul>
                 	<li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="historia.php">Historia de Yucatán</a></li>

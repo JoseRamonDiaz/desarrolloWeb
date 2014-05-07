@@ -2,6 +2,7 @@
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
 include_once("funciones/usuarios.php");
+session_start();
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -140,7 +141,7 @@ include_once("funciones/usuarios.php");
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1> Registro de Cuenta</h1>
 <form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-  <p align="center" class="estado"><?php echo agregarUsuarioNuevo(); ?></p>
+  <p align="center" class="estado"><?php echo agregarUsuario(); ?></p>
 <div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
@@ -421,6 +422,16 @@ include_once("funciones/usuarios.php");
 <br />
 <td><span >*</span>Usuario:</td> <td> <input type="text"  name="usuario" value="<?php echo (isset($_POST["usuario"]))?$_POST["usuario"]:""; ?>" id="usuario"/></td>
 <tr> </tr>
+<br />
+<td><span >*</span>Tipo de Usuario:</td> <td> 
+
+<select name="admin"> 
+<option value="1">Administrator </option>
+<option value="0">Cliente </option>
+</select>
+
+</td>
+<tr> </tr>
 <td><span >*</span>Contraseña:</td> <td><input type="password"  name="contrasena" value="<?php echo (isset($_POST["contrasena"]))?$_POST["contrasena"]:""; ?>" id="contrasena"/></td>
 <tr> </tr>
 <td><span >*</span>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena"/></td>
@@ -428,7 +439,7 @@ include_once("funciones/usuarios.php");
 </table>
 </div>
 <div class="boton" align="center">
- <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/>
+ <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/> <a href="usuarios.php"> <input type="button" value="Cancelar" /> </a>
 </div>
 </form>
 <br />

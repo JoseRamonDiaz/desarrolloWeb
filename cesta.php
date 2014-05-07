@@ -1,5 +1,5 @@
 <?php
-include_once("mantener_sesion.php");
+include_once("funciones/mantener_sesion.php");
 validarSesion();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -60,13 +60,17 @@ validarSesion();
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>
-                            		<li><a href="usuarios.php">Usuarios</a></li>
+                        ?>    <li> 
+                            		<a href="usuarios.php">Usuarios</a> </li>
+                                
+                                    
+                                    
+                                   
                             		<li><a href="agregarproducto.php">Productos</a></li>
 						<?php
                         		}
                         ?>
-                            	<li> <a href="perfil.php">Perfil</a></li>
+                            	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
                             	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
@@ -87,7 +91,10 @@ validarSesion();
                 <div id=carrito ><img  src="imagenes/carrito.png" width="100" height="80" /> </div>
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
-                    <input type="text" onkeydown="this.style.color = '#000000';" onclick="this.value = '';" value="Búsqueda" name="filter_name"/>
+                    <FORM METHOD=GET ACTION="buscar.php ">
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+</FORM>
+   
                 </div>
             </div>
             
@@ -210,7 +217,7 @@ validarSesion();
         
         <div id="footer">
             <div class="column">
-              	<h3>Quiénes somos</h3>
+              	<h3>¿Quiénes somos?</h3>
               	<ul>
                 	<li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="historia.php">Historia de Yucatán</a></li>

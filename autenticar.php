@@ -1,11 +1,11 @@
 <?php 
-	include_once("mantener_sesion.php");
+	include_once("funciones/mantener_sesion.php");
 	include_once("./funciones/acceder_base_datos.php");
 	include_once("./funciones/administrar_usuarios.php");
 	
 	if ( (isset($_POST["btn_aceptar"])) && ($_POST["btn_aceptar"]=="Aceptar") ){
 		
-		$ausuario = recuperarInfoUsuario($_POST["usuario"], $_POST["contrasena"]);
+		$ausuario = recuperarInfoUsuario($_POST["usuario"], md5($_POST["contrasena"]));
 				
 		$cdestino = "Location: sesion.php";
 		

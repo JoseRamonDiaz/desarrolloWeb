@@ -1,5 +1,5 @@
 <?php
-include_once("./funciones/config.inc.php");
+include_once("config.inc.php");
 function abrirConexion(){
   //Abre una conexión con la base de datos
   $pconector = mysql_connect($GLOBALS["servidor"],$GLOBALS["usuario"],$GLOBALS["contrasena"]) or die(mysql_error());
@@ -43,6 +43,8 @@ function insertarDatos($cquery, $pconector){
  //Inserta un registro en la base de datos
  $lentrada_creada = false;
  $lresult = mysql_query($cquery, $pconector);
+ 
+ //mysql_query($cquery2, $pconector);
  if (!$lresult){   
    $cerror = "Ocurrió un error al acceder a la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";

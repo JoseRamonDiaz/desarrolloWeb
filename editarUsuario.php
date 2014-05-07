@@ -1,9 +1,13 @@
 <?php
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
-include_once("funciones/usuarios.php");
-
+include_once("./funciones/listar.php");
+include_once("./funciones/editar.php");
+$adatos;
+$adatos = recuperarInfoUsuario($_GET["cid_Usuario"]);
+session_start();
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -11,8 +15,8 @@ include_once("funciones/usuarios.php");
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <!-- InstanceBeginEditable name="doctitle" -->
-<title>Registro de cuenta</title>
-<!-- InstanceEndEditable -->
+    <title>Tienda Alux</title>
+    <!-- InstanceEndEditable -->
     <script>
        pic1 = new Image();
        pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
@@ -24,7 +28,7 @@ include_once("funciones/usuarios.php");
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
     <!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+    <!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -138,43 +142,42 @@ include_once("funciones/usuarios.php");
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1> Registro de Cuenta</h1>
-<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-  <p align="center" class="estado"><?php echo agregarUsuarioNuevo(); ?></p>
-<div class="form">
+		<div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
-<th> <span >*</span>Datos Obligatorios </th>
+<form method="post" action="funciones/editar.php" name="form_editar">
+<input type="hidden" value="<?php echo $adatos["id"]?>" name="id" /> 
 <tr> </tr>
 <br />
-<td><span >*</span>Nombre:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/></td>
+<td>ID:</td> <td> <?php echo $adatos["id"]?></td>
 <tr> </tr>
-<td><span >*</span>Apellidos:</td> <td><input type="text"  name="apellidos" value="<?php echo (isset($_POST["apellidos"]))?$_POST["apellidos"]:""; ?>" id="apellidos"/></td>
+<td>Nombre:</td> <td> <input type="text" name="nombre_txt" value="<?php echo $adatos["nombre"]?>" /> </td>
 <tr> </tr>
-<td><span >*</span>Email:</td> <td> <input type="email"  name="mail" value="<?php echo (isset($_POST["mail"]))?$_POST["mail"]:""; ?>" id="mail"/></td>
+<td>Apellidos:</td> <td><input type="text" name="apellidos_txt" value="<?php echo $adatos["apellido"]?>" /></td>
 <tr> </tr>
-<td><span >*</span>Telefono:</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/></td>
+<td>Email:</td> <td><input type="text" name="mail_txt" value="<?php echo $adatos["email"]?>" /> </td>
 <tr> </tr>
-<td>Fax:</td> <td> <input type="text"  name="fax" value="<?php echo (isset($_POST["fax"]))?$_POST["fax"]:""; ?>" id="fax"/></td>
+<td>Telefono:</td> <td><input type="text" name="telefono_txt" value="<?php echo $adatos["telefono"]?>" /> </td>
+<tr> </tr>
+<td>Fax:</td> <td><input type="text" name="fax_txt" value="<?php echo $adatos["fax"]?>" /></td>
 </table>
 </div>
 
 <div class="form">
  <table class="tabla1">
  <h2>Dirección</h2>
-<th> <span >*</span>Datos Obligatorios </th>
 <tr> </tr>
 <br />
-<td>Empresa:</td> <td> <input type="text"  name="empresa" value="<?php echo (isset($_POST["empresa"]))?$_POST["empresa"]:""; ?>" id="empresa"/></td>
+<td>Empresa:</td> <td><input type="text" name="emp_txt" value="<?php echo $adatos["empresa"]?>" /></td>
 <tr> </tr>
-<td><span >*</span>Dirección:</td> <td><input type="text"  name="direc1" value="<?php echo (isset($_POST["direc1"]))?$_POST["direc1"]:""; ?>" id="direc1"/></td>
+<td>Dirección:</td> <td><input type="text" name="direc_txt" value="<?php echo $adatos["direccion"]?>" /></td>
 <tr> </tr>
-<td><span >*</span>Ciudad:</td> <td> <input type="text"  name="ciudad" value="<?php echo (isset($_POST["ciudad"]))?$_POST["ciudad"]:""; ?>" id="ciudad"/></td>
-<tr> </tr>
-<td>Codigo postal:</td> <td> <input type="text"  name="cp" value="<?php echo (isset($_POST["cp"]))?$_POST["cp"]:""; ?>" id="cp"/></td>
+<td>Codigo postal:</td> <td><input type="text" name="cp_txt" value="<?php echo $adatos["cp"]?>"/></td>
 <tr></tr>
-<td><span >*</span>País:</td> 
-<td> <select name="pais">
+<td>País:</td> 
+<td>
+
+<select name="pais">
 <option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
 <option value="DE">Alemania</option>
@@ -239,7 +242,7 @@ include_once("funciones/usuarios.php");
 <option value="AE">Emiratos Árabes Unidos</option>
 <option value="ER">Eritrea</option>
 <option value="SI">Eslovenia</option>
-<option value="ES" selected>España</option>
+<option value="ES">España</option>
 <option value="US">Estados Unidos</option>
 <option value="EE">Estonia</option>
 <option value="ET">Etiopía</option>
@@ -409,30 +412,41 @@ include_once("funciones/usuarios.php");
 <option value="YU">Yugoslavia</option>
 <option value="ZM">Zambia</option>
 <option value="ZW">Zimbabue</option>
-</select></td>
+</select>
+ </td>
+
+<tr></tr>
+<td>Ciudad:</td> <td><input type="text" name="city_txt" value="<?php echo $adatos["ciudad"]?>" /> </td>
 
 </table>
 </div>
 <div class="form">
  <table class="tabla1">
  <h2>Datos de Usuario</h2>
-<th> <span >*</span>Datos Obligatorios </th>
+<th>Datos Obligatorios </th>
 <tr> </tr>
 <br />
-<td><span >*</span>Usuario:</td> <td> <input type="text"  name="usuario" value="<?php echo (isset($_POST["usuario"]))?$_POST["usuario"]:""; ?>" id="usuario"/></td>
+<td>Usuario:</td> <td><input type="text" name="usuario" value="<?php echo $adatos["usuario"]?>" /> </td>
+<br />
 <tr> </tr>
-<td><span >*</span>Contraseña:</td> <td><input type="password"  name="contrasena" value="<?php echo (isset($_POST["contrasena"]))?$_POST["contrasena"]:""; ?>" id="contrasena"/></td>
+<td>Permisos</td><td><select name="admin"> 
+<option value="1">Administrator </option>
+<option value="0">Cliente </option>
+</select></td>
 <tr> </tr>
-<td><span >*</span>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena"/></td>
+<td>Contraseña:</td> <td><input type="password" name="contrasena" value="<?php echo $adatos["contrasena"]?>" /></td>
+
 
 </table>
 </div>
 <div class="boton" align="center">
  <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/>
 </div>
-</form>
+
 <br />
-<!-- InstanceEndEditable -->
+ </form>		
+		
+		<!-- InstanceEndEditable -->
         </div>
         
         <div id="footer">

@@ -2,7 +2,7 @@
 	include_once("./funciones/config.inc.php"); 
 	include_once("./funciones/acceder_base_datos.php");
 	include_once("./funciones/listar.php");
-	include_once("mantener_sesion.php");
+	include_once("funciones/mantener_sesion.php");
 	validarSesion();
 ?>
 
@@ -64,13 +64,17 @@
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>
-                            		<li><a href="usuarios.php">Usuarios</a></li>
+                        ?>    <li> 
+                            		<a href="usuarios.php">Usuarios</a> </li>
+                                
+                                    
+                                    
+                                   
                             		<li><a href="agregarproducto.php">Productos</a></li>
 						<?php
                         		}
                         ?>
-                            	<li> <a href="perfil.php">Perfil</a></li>
+                            	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
                             	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
@@ -91,7 +95,10 @@
                 <div id=carrito ><img  src="imagenes/carrito.png" width="100" height="80" /> </div>
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
-                    <input type="text" onkeydown="this.style.color = '#000000';" onclick="this.value = '';" value="Búsqueda" name="filter_name"/>
+                    <FORM METHOD=GET ACTION="buscar.php ">
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+</FORM>
+   
                 </div>
             </div>
             
@@ -134,7 +141,7 @@
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1> Usuarios </h1>
-
+<div>
 <table id="tablaUsuarios" class="tabla">
   <tr>
     <th class="primero">ID</th>
@@ -154,7 +161,7 @@
   ?>
 </table>
 
-
+</div>
 <div id="cuenta2">
 <div id="tituloCuenta"> 
 <b>Cuenta</b>
@@ -162,8 +169,7 @@
 <div id="contenidocuenta">
 <div id="contenidos" > 
 <ul>
-<li><a href="crearcuenta.php">Crear Cuenta</a></li>
-<li><a href="editar.php">Editar Usuario</a></li>
+<li><a href="nuevacuenta.php">Nueva Cuenta</a></li>
 <!---<li><a href="devoluciones.html">Devoluciones</a></li>--->
 </ul>
 </div>
@@ -179,7 +185,7 @@
         
         <div id="footer">
             <div class="column">
-              	<h3>Quiénes somos</h3>
+              	<h3>¿Quiénes somos?</h3>
               	<ul>
                 	<li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="historia.php">Historia de Yucatán</a></li>
