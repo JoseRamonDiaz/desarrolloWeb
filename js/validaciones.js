@@ -1,43 +1,3 @@
-function validarForm(){
-    var errores = new Array();
-    var nombre = document.getElementById("nombre").value;
-    var color = document.getElementById("color").value;
-    var precio = document.getElementById("precio").value;
-    var talla = document.getElementById("talla1").value;
-    var categoria = document.getElementById("tipo_id").value;
-    var modelo = document.getElementById("modelo_id").value;
-    var descripcion = document.getElementById("descripcion").value;
-    var imagen = document.getElementById("imagen").value;
-    
-    removeFeedback();
-    
-    if(!nombreValido(nombre))
-        errores.push("nombre");
-    if(!precioValido(precio))
-        errores.push("precio");
-    if(!tallaValida(talla))
-        errores.push("talla1");
-    if(!colorValido(color))
-        errores.push("color");
-    if(!categoriaValida(categoria))
-        errores.push("tipo_id");
-    if(!modeloValido(modelo))
-        errores.push("modelo_id");
-    if(!descripcionValida(descripcion))
-        errores.push("descripcion");
-    if(!imagenValida(imagen))
-        errores.push("imagen");
-        
-    var isValid = errores=="";
-    if(isValid){
-        return true;
-    }
-    else{
-        provideFeedback(errores);
-        return false;
-    }
-}
-
 function provideFeedback(errores){
     for(var i = 0; i < errores.length; i++){
         document.getElementById(errores[i]).setAttribute("class", "errorClass");
@@ -127,6 +87,36 @@ function imagenValida(imagen){
     return !isEmpty(imagen);
 }
 
+function emailValido(email){
+    var mailRegexp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return mailRegexp.test(email);
+}
+
+function telValido(tel){
+    var telRegexp = /^\d{10}$/;
+    return telRegexp.test(tel);
+}
+
+function direccionValida(direccion){
+    return !isEmpty(direccion);
+}
+
+function ciudadValida(ciudad){
+    return !isEmpty(ciudad);
+}
+
+function usuarioValido(usuario){
+    return !isEmpty(usuario);
+}
+
+function passValido(pass){
+    return !isEmpty(pass);
+}
+
+function pass2Valido(pass, pass2){
+    return pass == pass2;
+}
+
 function isEmpty(cadena){
 	return cadena == "";
 }
@@ -139,10 +129,4 @@ function hasNumber(cadena){
 //Implementar funcion
 function isNumber(cadena){
 	return /^\d+$/.test(cadena);
-}
-
-
-window.onload = function(){
-    document.getElementById("frm_agregar").onsubmit = validarForm;
-    //console.log(tallaValida("XL"));
 }

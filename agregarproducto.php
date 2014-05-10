@@ -16,6 +16,7 @@ include_once("modelo.php");
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <script src="js/validaciones.js"></script>
+    <script src="js/validarAgregarProducto.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->

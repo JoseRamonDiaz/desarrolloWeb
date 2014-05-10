@@ -10,6 +10,8 @@ include_once("funciones/usuarios.php");
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/validarCrearCuenta.js"></script>
+    <script src="js/validaciones.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Registro de cuenta</title>
 <!-- InstanceEndEditable -->
@@ -139,21 +141,31 @@ include_once("funciones/usuarios.php");
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1> Registro de Cuenta</h1>
-<form name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+<form id="frm_agregar" name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    <div id="errorDiv"></div>
   <p align="center" class="estado"><?php echo agregarUsuarioNuevo(); ?></p>
 <div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
+ 
 <th> <span >*</span>Datos Obligatorios </th>
 <tr> </tr>
 <br />
-<td><span >*</span>Nombre:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/></td>
+<td><span >*</span>Nombre:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/>
+    <span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Apellidos:</td> <td><input type="text"  name="apellidos" value="<?php echo (isset($_POST["apellidos"]))?$_POST["apellidos"]:""; ?>" id="apellidos"/></td>
+<td><span >*</span>Apellidos:</td> <td><input type="text"  name="apellidos" value="<?php echo (isset($_POST["apellidos"]))?$_POST["apellidos"]:""; ?>" id="apellidos"/>
+    <span id="apellidosError" class="errorFeedback errorSpan">El apellido es incorrecto</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Email:</td> <td> <input type="email"  name="mail" value="<?php echo (isset($_POST["mail"]))?$_POST["mail"]:""; ?>" id="mail"/></td>
+<td><span >*</span>Email:</td> <td> <input type="email"  name="mail" value="<?php echo (isset($_POST["mail"]))?$_POST["mail"]:""; ?>" id="mail"/>
+    <span id="mailError" class="errorFeedback errorSpan">El correo es incorrecto</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Telefono:</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/></td>
+<td><span >*</span>Telefono:</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/>
+    <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
+</td>
 <tr> </tr>
 <td>Fax:</td> <td> <input type="text"  name="fax" value="<?php echo (isset($_POST["fax"]))?$_POST["fax"]:""; ?>" id="fax"/></td>
 </table>
@@ -167,9 +179,13 @@ include_once("funciones/usuarios.php");
 <br />
 <td>Empresa:</td> <td> <input type="text"  name="empresa" value="<?php echo (isset($_POST["empresa"]))?$_POST["empresa"]:""; ?>" id="empresa"/></td>
 <tr> </tr>
-<td><span >*</span>Dirección:</td> <td><input type="text"  name="direc1" value="<?php echo (isset($_POST["direc1"]))?$_POST["direc1"]:""; ?>" id="direc1"/></td>
+<td><span >*</span>Dirección:</td> <td><input type="text"  name="direc1" value="<?php echo (isset($_POST["direc1"]))?$_POST["direc1"]:""; ?>" id="direc1"/>
+    <span id="direc1Error" class="errorFeedback errorSpan">La dirección es incorrecta</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Ciudad:</td> <td> <input type="text"  name="ciudad" value="<?php echo (isset($_POST["ciudad"]))?$_POST["ciudad"]:""; ?>" id="ciudad"/></td>
+<td><span >*</span>Ciudad:</td> <td> <input type="text"  name="ciudad" value="<?php echo (isset($_POST["ciudad"]))?$_POST["ciudad"]:""; ?>" id="ciudad"/>
+    <span id="ciudadError" class="errorFeedback errorSpan">La ciudad es incorrecta</span>
+</td>
 <tr> </tr>
 <td>Codigo postal:</td> <td> <input type="text"  name="cp" value="<?php echo (isset($_POST["cp"]))?$_POST["cp"]:""; ?>" id="cp"/></td>
 <tr></tr>
@@ -419,11 +435,17 @@ include_once("funciones/usuarios.php");
 <th> <span >*</span>Datos Obligatorios </th>
 <tr> </tr>
 <br />
-<td><span >*</span>Usuario:</td> <td> <input type="text"  name="usuario" value="<?php echo (isset($_POST["usuario"]))?$_POST["usuario"]:""; ?>" id="usuario"/></td>
+<td><span >*</span>Usuario:</td> <td> <input type="text"  name="usuario" value="<?php echo (isset($_POST["usuario"]))?$_POST["usuario"]:""; ?>" id="usuario"/>
+    <span id="usuarioError" class="errorFeedback errorSpan">El usuario es incorrecto</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Contraseña:</td> <td><input type="password"  name="contrasena" value="<?php echo (isset($_POST["contrasena"]))?$_POST["contrasena"]:""; ?>" id="contrasena"/></td>
+<td><span >*</span>Contraseña:</td> <td><input type="password"  name="contrasena" value="<?php echo (isset($_POST["contrasena"]))?$_POST["contrasena"]:""; ?>" id="contrasena"/>
+    <span id="contrasenaError" class="errorFeedback errorSpan">La contraseña es incorrecta</span>
+</td>
 <tr> </tr>
-<td><span >*</span>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena"/></td>
+<td><span >*</span>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena2"/>
+    <span id="contrasena2Error" class="errorFeedback errorSpan">La contraseña no coincide</span>
+</td>
 
 </table>
 </div>
