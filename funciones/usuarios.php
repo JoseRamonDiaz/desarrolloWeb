@@ -42,7 +42,7 @@ function agregarUsuario(){
 
  $cmensaje = "";
  if ( isset($_POST["btn_grabar"]) && $_POST["btn_grabar"] == "Guardar"){
- 
+   
    $cnombre = $_POST["nombre"];
    $capellidos = $_POST["apellidos"];
    $cmail = $_POST["mail"];
@@ -69,7 +69,7 @@ function agregarUsuario(){
 	   $cquery .= " (nombre, apellido, direccion, usuario, contrasena, email, telefono, fax, empresa, cp, pais, ciudad, esAdmin)";
 	   $cquery .= " VALUES ('$cnombre', '$capellidos', '$cdireccion', '$cusuario', '$ccontrasena', '$cmail', '$ctelefono', '$cfax', '$cempresa', '$ccp', '$cpais', '$cciudad', '$cadmin' )";
 	   if (insertarDatos($cquery, $pconexion) )
-	     $cmensaje = "Producto registrado";
+	     $cmensaje = "Usuario Registrado";
 	   else
 	     $cmensaje = "No fue posible registrar el producto en el catálogo";	 
    }
@@ -107,7 +107,7 @@ function agregarUsuarioNuevo(){
 
  $cmensaje = "";
  if ( isset($_POST["btn_grabar"]) && $_POST["btn_grabar"] == "Guardar"){
- 
+ $tipo_cuenta = $_POST["tipo_cuenta"];
    $cnombre = $_POST["nombre"];
    $capellidos = $_POST["apellidos"];
    $cmail = $_POST["mail"];
@@ -130,10 +130,10 @@ function agregarUsuarioNuevo(){
    if ( !existeRegistro($cquery, $pconexion) ){
 	   
 	   $cquery = "INSERT INTO usuario";
-	   $cquery .= " (nombre, apellido, direccion, usuario, contrasena, email, telefono, fax, empresa, cp, pais, ciudad)";
-	   $cquery .= " VALUES ('$cnombre', '$capellidos', '$cdireccion', '$cusuario', '$ccontrasena', '$cmail', '$ctelefono', '$cfax', '$cempresa', '$ccp', '$cpais', '$cciudad' )";
+	   $cquery .= " (nombre, apellido, direccion, usuario, contrasena, email, telefono, fax, empresa, cp, pais, ciudad,  esAdmin)";
+	   $cquery .= " VALUES ('$cnombre', '$capellidos', '$cdireccion', '$cusuario', '$ccontrasena', '$cmail', '$ctelefono', '$cfax', '$cempresa', '$ccp', '$cpais', '$cciudad', '$tipo_cuenta')";
 	   if (insertarDatos($cquery, $pconexion) )
-	     $cmensaje = "Producto registrado";
+	     $cmensaje = "Usuario Registrado";
 	   else
 	     $cmensaje = "No fue posible registrar el usuario en el catálogo";	 
    }

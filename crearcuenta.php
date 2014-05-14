@@ -142,6 +142,7 @@ include_once("funciones/usuarios.php");
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1> Registro de Cuenta</h1>
 <form id="frm_agregar" name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+<input type="hidden" value="0" name="tipo_cuenta" />
     <div id="errorDiv"></div>
   <p align="center" class="estado"><?php echo agregarUsuarioNuevo(); ?></p>
 <div class="form">
