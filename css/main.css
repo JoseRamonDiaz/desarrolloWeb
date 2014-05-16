@@ -517,8 +517,9 @@ div.derecha2{
 
 #detalles3{
 	
-	color:#CC6;
-	background-color:#00F;
+background-image:url(../imagenes/menu.png);
+color:#FFF;
+margin-top:20px;
 	}
         
 #detalles_compra{
