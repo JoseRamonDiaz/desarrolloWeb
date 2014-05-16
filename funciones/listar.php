@@ -231,6 +231,7 @@ $ccontenido .= " <img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height=
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -290,6 +291,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -350,6 +352,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -411,6 +414,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -472,6 +476,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -534,6 +539,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -595,6 +601,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -655,6 +662,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -715,6 +723,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -778,6 +787,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -839,6 +849,7 @@ $ccontenido .= " <img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height=
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -902,6 +913,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
@@ -964,6 +976,7 @@ $ccontenido .= "<img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= 
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
+$ccontenido .= "<input type=\"button\" onclick=\"window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=900,height=456,resizable=yes')\" value=\"Detalles\"/ src=\"vista.php?cid_producto=".$adatos['Id_Producto']."\" id=\"detalles3\">";
 $ccontenido .= "</div>";
 $ccontenido .= "</li>";
 //$ccontenido .= "</ul>";
