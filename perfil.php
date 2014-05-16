@@ -151,7 +151,7 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
 
 <tr> </tr>
 <br />
-<td>ID:</td> <td> <?php echo $adatos["id"]?></td>
+<!--<td>ID:</td> <td> <?php //echo $adatos["id"]?></td> -->
 <tr> </tr>
 <td>Nombre:</td> <td> <?php echo $adatos["nombre"]?></td>
 <tr> </tr>
