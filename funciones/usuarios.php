@@ -71,7 +71,7 @@ function agregarUsuario(){
 	   if (insertarDatos($cquery, $pconexion) )
 	     $cmensaje = "Usuario Registrado";
 	   else
-	     $cmensaje = "No fue posible registrar el producto en el catálogo";	 
+	     $cmensaje = "No fue posible registrar el usuario en la base de datos";	 
    }
    else
      $cmensaje = "Ya existe un usuario con el nombre: $cusuario";
@@ -135,7 +135,7 @@ function agregarUsuarioNuevo(){
 	   if (insertarDatos($cquery, $pconexion) )
 	     $cmensaje = "Usuario Registrado";
 	   else
-	     $cmensaje = "No fue posible registrar el usuario en el catálogo";	 
+	     $cmensaje = "No fue posible registrar el usuario en la base de datos";	 
    }
    else
      $cmensaje = "Ya existe un usuario con el nombre: $cusuario";
