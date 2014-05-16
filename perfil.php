@@ -193,7 +193,7 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
 <br />
 <td>Usuario:</td> <td> <?php echo $adatos["usuario"]?></td>
 <tr> </tr>
-<td>Contraseña:</td> <td><?php echo $adatos["contrasena"]?></td>
+<!--<td>Contraseña:</td> <td><?php // echo $adatos["contrasena"]?></td>-->
 
 
 </table>
