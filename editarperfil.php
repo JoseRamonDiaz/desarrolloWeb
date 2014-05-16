@@ -151,7 +151,7 @@ session_start();
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" /> 
 <tr> </tr>
 <br />
-<td>ID:</td> <td> <?php echo $adatos["id"]?></td>
+<!--<td>ID:</td> <td> <?php //echo $adatos["id"]?></td> -->
 <tr> </tr>
 <td>Nombre:</td> <td> <input type="text" name="nombre_txt" value="<?php echo $adatos["nombre"]?>" /> </td>
 <tr> </tr>
