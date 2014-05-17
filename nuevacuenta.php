@@ -2,7 +2,8 @@
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
 include_once("funciones/usuarios.php");
-session_start();
+include_once("funciones/mantener_sesion.php");
+validarSesion();
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

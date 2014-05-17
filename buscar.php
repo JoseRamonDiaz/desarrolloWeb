@@ -3,6 +3,8 @@
 	include_once("./funciones/acceder_base_datos.php");
 	session_start();
 	include_once("funciones/agregar.php");
+	include_once("funciones/mantener_sesion.php");
+validarSesion();
 	
 include_once("modelo.php");
 	
