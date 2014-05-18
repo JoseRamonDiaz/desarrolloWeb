@@ -6,12 +6,12 @@
 function listarProductos(){
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  $cquery .= " producto.imagen AS Imagen";
@@ -22,9 +22,9 @@ function listarProductos(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -111,12 +111,19 @@ return $adatos;
 //-----------------------------------------------//
 
 function listarUsuarios(){
+	 echo '<script language="JavaScript">
+function confirmar ( mensaje ) {
+return confirm( mensaje );
+}
+
+   </script>';
+	
 	$ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT usuario.id AS Id, usuario.nombre AS Nombre, ";
  $cquery .= " usuario.apellido AS Apellido, usuario.usuario AS Usuario,";
  $cquery .= " usuario.email AS Email";
@@ -127,9 +134,9 @@ function listarUsuarios(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -152,7 +159,7 @@ function listarUsuarios(){
 	   $ccontenido .= "<td width=\"10\">&nbsp;</td>"; //***
 	   $ccontenido .= "<td><a href=\"./editarUsuario.php?cid_Usuario=$cid_Usuario\">"; //***
 	   $ccontenido .= "<img src=\"imagenes/lapiz.gif\" border=\"0\" alt=\"Editar Usuario\" width=\"30\" height=\"25\"></a></td>";
-	   $ccontenido .= "<td><a href=\"funciones/borrar.php?cid_Usuario=$cid_Usuario\">"; //***
+	   $ccontenido .= "<td><a href=\"funciones/borrar.php?cid_Usuario=$cid_Usuario\" onclick=\"return confirmar(' 驴Est&aacute; seguro que desea eliminar el usuario?')\">"; //***
 
 	   $ccontenido .= "<img src=\"imagenes/borrar.gif\" border=\"0\" alt=\"Eliminar Usuario\"></a></td>";
 	   $ccontenido .= "</tr>";	
@@ -197,12 +204,12 @@ function listarguayaberas(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -214,9 +221,9 @@ function listarguayaberas(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -257,12 +264,12 @@ function listarpantalones(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
 // $cquery .= " producto.cantidad AS Cantidad, ";
@@ -274,9 +281,9 @@ function listarpantalones(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -318,12 +325,12 @@ function listarzapatoscaballeros(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -335,9 +342,9 @@ function listarzapatoscaballeros(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -380,12 +387,12 @@ function listarproductosdama(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -397,9 +404,9 @@ function listarproductosdama(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -442,12 +449,12 @@ function listarzapatosdama(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -459,9 +466,9 @@ function listarzapatosdama(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -505,12 +512,12 @@ function listarvestidosdama(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -522,9 +529,9 @@ function listarvestidosdama(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -567,12 +574,12 @@ function listarguayaberasninos(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -584,9 +591,9 @@ function listarguayaberasninos(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -628,12 +635,12 @@ function listarpantalonesninos(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -645,9 +652,9 @@ function listarpantalonesninos(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -689,12 +696,12 @@ function listarzapatosninos(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -706,9 +713,9 @@ function listarzapatosninos(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -753,12 +760,12 @@ function listarproductosninos(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -770,9 +777,9 @@ function listarproductosninos(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -815,12 +822,12 @@ function listarproductosninas(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -832,9 +839,9 @@ function listarproductosninas(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -879,12 +886,12 @@ function listarzapatosninas(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -896,9 +903,9 @@ function listarzapatosninas(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
@@ -942,12 +949,12 @@ function listarvestidosninas(){
 		
  
  $ccontenido = "";
- //Conexi髇 con la base de datos
+ //Conexi贸n con la base de datos
  $pconexion = abrirConexion();
- //Selecci髇 de la base de datos
+ //Selecci贸n de la base de datos
  seleccionarBaseDatos($pconexion);
  
- //Construcci髇 de la sentencia SQL
+ //Construcci贸n de la sentencia SQL
  $cquery = "SELECT producto.id AS Id_Producto, producto.precio AS Precio, ";
  $cquery .= " producto.nombre AS Nombre, ";
  //$cquery .= " producto.cantidad AS Cantidad, ";
@@ -959,9 +966,9 @@ function listarvestidosninas(){
  $lresult = mysql_query($cquery, $pconexion); 
 	 
  if (!$lresult) {
-   $cerror = "No fue posible recuperar la informaci髇 de la base de datos.<br>";
+   $cerror = "No fue posible recuperar la informaci贸n de la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripci髇: ".mysql_error($pconexion);
+   $cerror .= "Descripci贸n: ".mysql_error($pconexion);
    die($cerror);
  } 
  else{ 
