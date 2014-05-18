@@ -153,6 +153,7 @@ function listarUsuarios(){
 	   $ccontenido .= "<td><a href=\"./editarUsuario.php?cid_Usuario=$cid_Usuario\">"; //***
 	   $ccontenido .= "<img src=\"imagenes/lapiz.gif\" border=\"0\" alt=\"Editar Usuario\" width=\"30\" height=\"25\"></a></td>";
 	   $ccontenido .= "<td><a href=\"funciones/borrar.php?cid_Usuario=$cid_Usuario\">"; //***
+
 	   $ccontenido .= "<img src=\"imagenes/borrar.gif\" border=\"0\" alt=\"Eliminar Usuario\"></a></td>";
 	   $ccontenido .= "</tr>";	
 	 }   
