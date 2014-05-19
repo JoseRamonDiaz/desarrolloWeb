@@ -1,5 +1,8 @@
 <?php
+include_once("./funciones/config.inc.php"); 
+include_once("./funciones/acceder_base_datos.php");
 include_once("funciones/mantener_sesion.php");
+include_once("funciones/listarHistorial.php");
 validarSesion();
 ?>
 
@@ -142,47 +145,27 @@ validarSesion();
 
 
 
-<table id="tablaCarrito2">
+<table id="tablaCarrito2" class="tabla">
   <tr>
-    <th scope="col">ID</th>
+    <th class="primero" scope="col">ID</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Fecha</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Artículo</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Talla</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Cantidad</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Costo unitario</th>
+	<th width="10">&nbsp;</th>
     <th scope="col">Costo total</th>
-    <th scope="col">Estado</th>
+	<th width="10">&nbsp;</th>
+    <th class="ultimo" scope="col">Estado</th>
   </tr>
-  <tr>
-  <td>1</td>
-  <td>10/Abril/2014</td>
-    <td>Blusa Pepem</td>
-    <td>CH</td>
-    <td>3</td>
-    <td>$150.00</td>
-    <td>$450.00</td>
-    <td>Pendiente</td>
-  </tr>
-  <tr>
-   <td>2</td>
-  <td>1/Marzo/2014</td>
-    <td>Camisa José Luis</td>
-    <td>Med</td>
-    <td>1</td>
-    <td>$200.00</td>
-    <td>$200.00</td>
-    <td>Pagado</td>
-  </tr>
-  <tr>
-   <td>3</td>
-  <td>9/Abril/2014</td>
-    <td>Pantalón</td>
-    <td>Med</td>
-    <td>2</td>
-    <td>$350.00</td>
-    <td>$700.00</td>
-    <td>En cola</td>
-  </tr>
+  <?php 
+    echo listar_historial();  
+  ?>
 </table>
 
 <p><a href="index.php"><button id="btn_pagar" >Regresar</button> </a></p>
