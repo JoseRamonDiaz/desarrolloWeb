@@ -90,6 +90,8 @@ CREATE  TABLE IF NOT EXISTS `alux`.`historial` (
   `fecha` VARCHAR(15) NOT NULL,
   `cantidad` INT(10) UNSIGNED NOT NULL,
   `total` INT(10) UNSIGNED NOT NULL,
+  `talla` varchar(45) NOT NULL,
+  `precio` int(10) unsigned NOT NULL,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
   INDEX `id_usuario_idx` (`id_usuarios` ASC) ,
   INDEX `id_pedido_idx` (`id_productos` ASC) ,

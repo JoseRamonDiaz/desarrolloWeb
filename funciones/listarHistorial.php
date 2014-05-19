@@ -7,7 +7,7 @@ function listar_historial(){
 	seleccionarBaseDatos($pconexion);
 
 	//Construcción de la sentencia SQL
-	$cquery = "SELECT historial.id, estado, fecha, historial.cantidad, total, precio, producto.nombre, talla";
+	$cquery = "SELECT historial.id, estado, fecha, historial.cantidad, total, historial.precio, producto.nombre, talla";
 	$cquery .= " FROM historial";
 	$cquery .= " JOIN producto ON producto.id = historial.id_productos";
 	$cquery .= " JOIN usuario ON usuario.id = historial.id_usuarios";
