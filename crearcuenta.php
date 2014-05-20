@@ -25,9 +25,10 @@ include_once("funciones/usuarios.php");
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
 	   
+
+<!-- InstanceBeginEditable name="head" -->
 	<script src="js/validarCrearCuenta.js"></script>
     <script src="js/validaciones.js"></script>
-<!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
    
 </head>

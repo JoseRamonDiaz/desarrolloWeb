@@ -28,9 +28,10 @@ include_once("modelo.php");
        pic4 = new Image();
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
-	  <script src="js/validaciones.js"></script>
-	  <script src="js/validarAgregarProducto.js"></script>
+
     <!-- InstanceBeginEditable name="head" -->
+		  <script src="js/validaciones.js"></script>
+	  <script src="js/validarAgregarProducto.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
