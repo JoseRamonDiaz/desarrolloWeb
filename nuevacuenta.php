@@ -25,8 +25,12 @@ validarSesion();
        pic4 = new Image();
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
-    <!-- InstanceBeginEditable name="head" -->
+	      
+	  <script src="js/validaciones.js"></script>
+<script src="js/validarCrearCuenta.js"></script>
+<!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
+
 </head>
 
 <body>
@@ -60,15 +64,18 @@ validarSesion();
             	</div>
             
                 <div id="bienvenido" >
+                <div class="principal3">
                  
                     <ul class="menu">
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
                         ?>   
+                       
                         <li> <a>Administración</a> 
                         <ul>
                             <li> <a href="usuarios.php">Usuarios</a></li>
+                          
                             <li> <a href="productos.php">Producto</a></li>
                            <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
                             
@@ -93,7 +100,7 @@ validarSesion();
                     </ul>
                 </div>
               </div>  
-        	
+        	</div>
             
             <div class="header">
                 <div id="logo"><a href="index.php"><img src="imagenes/logoo.png" width="250" height="158"/></a></div>
