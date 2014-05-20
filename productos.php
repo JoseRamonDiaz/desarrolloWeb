@@ -1,9 +1,12 @@
+
 <?php
 	include_once("./funciones/config.inc.php"); 
 	include_once("./funciones/acceder_base_datos.php");
-	include_once("./funciones/listar.php"); 
-	session_start();
+	include_once("./funciones/listar.php");
+	include_once("funciones/mantener_sesion.php");
+	validarSesion();
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -11,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <!-- InstanceBeginEditable name="doctitle" -->
-<title>Tienda Alux</title>
-<!-- InstanceEndEditable -->
+    <title>Tienda Alux</title>
+    <!-- InstanceEndEditable -->
     <script>
        pic1 = new Image();
        pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
@@ -24,7 +27,7 @@
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
     <!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+    <!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -143,13 +146,13 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Zapatos para dama</h1>
-<div class="productos">
-<ul class="lista_productos">
-<?php echo listarzapatosdama(); ?>
-</ul>
-</div>
-<!-- InstanceEndEditable -->
+		<div> 
+        <h2>Productos </h2>
+        
+        </div>
+		
+		
+		<!-- InstanceEndEditable -->
         </div>
         
         <div id="footer">

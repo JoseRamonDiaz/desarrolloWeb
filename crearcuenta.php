@@ -11,8 +11,6 @@ include_once("funciones/usuarios.php");
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
-    <script src="js/validarCrearCuenta.js"></script>
-    <script src="js/validaciones.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Registro de cuenta</title>
 <!-- InstanceEndEditable -->
@@ -61,17 +59,22 @@ include_once("funciones/usuarios.php");
             	</div>
             
                 <div id="bienvenido" >
+                 
                     <ul class="menu">
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>    <li> 
-                            		<a href="usuarios.php">Usuarios</a> </li>
-                                
-                                    
-                                    
-                                   
-                            		<li><a href="agregarproducto.php">Productos</a></li>
+                        ?>   
+                        <li> <a>Administración</a> 
+                        <ul>
+                            <li> <a href="usuarios.php">Usuarios</a></li>
+                            <li> <a href="productos.php">Producto</a></li>
+                           <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
+                            
+                        </ul>
+                    </li>
+                    
+                    
 						<?php
                         		}
                         ?>
@@ -88,8 +91,8 @@ include_once("funciones/usuarios.php");
                         ?>
                     </ul>
                 </div>
-                
-        	</div>
+              </div>  
+        	
             
             <div class="header">
                 <div id="logo"><a href="index.php"><img src="imagenes/logoo.png" width="250" height="158"/></a></div>

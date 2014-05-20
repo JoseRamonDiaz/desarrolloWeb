@@ -60,17 +60,22 @@
             	</div>
             
                 <div id="bienvenido" >
+                 
                     <ul class="menu">
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
-                        ?>    <li> 
-                            		<a href="usuarios.php">Usuarios</a> </li>
-                                
-                                    
-                                    
-                                   
-                            		<li><a href="agregarproducto.php">Productos</a></li>
+                        ?>   
+                        <li> <a>Administración</a> 
+                        <ul>
+                            <li> <a href="usuarios.php">Usuarios</a></li>
+                            <li> <a href="productos.php">Producto</a></li>
+                           <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
+                            
+                        </ul>
+                    </li>
+                    
+                    
 						<?php
                         		}
                         ?>
@@ -87,8 +92,8 @@
                         ?>
                     </ul>
                 </div>
-                
-        	</div>
+              </div>  
+        	
             
             <div class="header">
                 <div id="logo"><a href="index.php"><img src="imagenes/logoo.png" width="250" height="158"/></a></div>
@@ -161,21 +166,7 @@
   ?>
 </table>
 
-</div>
-<div id="cuenta2">
-<div id="tituloCuenta"> 
-<b>Cuenta</b>
-</div>
-<div id="contenidocuenta">
-<div id="contenidos" > 
-<ul>
-<li><a href="nuevacuenta.php">Nueva Cuenta</a></li>
-<!---<li><a href="devoluciones.html">Devoluciones</a></li>--->
-</ul>
-</div>
 
-
-</div>
 
 </div>
 

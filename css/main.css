@@ -51,6 +51,7 @@ a{
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
+	width:600px
 }
 
 #logo{
@@ -62,7 +63,8 @@ a{
 	top: 0px;
 	right: 315px;
 	z-index: 9;
-	min-width: 300px;
+	min-width: 100px;
+	margin-right:-60px;
 }
 
 
@@ -82,6 +84,8 @@ a{
 	right: 0px;
 	width: 298px;
 	z-index: 15;
+	margin-top:107px;
+	margin-right:-360px;
 }
 	
 #busqueda input {
@@ -102,6 +106,8 @@ a{
 	height: 40px;
 	padding-left: 10px;
 }
+
+
 	
 .menu{
     list-style:none;
@@ -162,7 +168,7 @@ a{
     /*opacity:1;*/
 	visibility:visible;
   display:block;
-  transition:12s;
+  transition:.12s;
 	
 }
 
