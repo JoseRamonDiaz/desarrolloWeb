@@ -18,16 +18,6 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
-    <script>
-       pic1 = new Image();
-       pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
-       pic2 = new Image();
-       pic2.src = 'imagenes/ZapatosCaballero.jpg';
-       pic3 = new Image();
-       pic3.src = 'imagenes/GuayaberaNinos.jpg';
-       pic4 = new Image();
-       pic4.src = 'imagenes/VestidosNinas.jpg';
-      </script>
     <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -72,7 +62,7 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
                         <li> <a>Administración</a> 
                         <ul>
                             <li> <a href="usuarios.php">Usuarios</a></li>
-                            <li> <a href="productos.php">Producto</a></li>
+                            <li> <a href="productos.php">Productos</a></li>
                            <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
                             
                         </ul>
@@ -83,13 +73,13 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
                         		}
                         ?>
                             	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
-                            	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
+                            	<li><a href="cerrar_sesion.php">Cerrar sesión  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
                             else {
                         ?>
                             <li><a href="crearcuenta.php" >Crear cuenta </a></li>
-                            <li><a href="sesion.php">Iniciar sesion</a></li>
+                            <li><a href="sesion.php">Iniciar sesión</a></li>
                         <?php
                             }
                         ?>
@@ -104,7 +94,7 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+   <input type="text"  placeholder="Buscar productos" name="search"/> 
 </FORM>
    
                 </div>
