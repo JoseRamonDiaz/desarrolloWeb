@@ -148,7 +148,8 @@
     <th>Apellido</th>
 	<th width="10">&nbsp;</th>
     <th>Email</th>
-	<th width="10">&nbsp;</th>	
+	<th width="10">&nbsp;</th>
+    <th width="10">&nbsp;</th>	
 	<th class="ultimo" width="10">&nbsp;</th>
   </tr>
   <?php 
