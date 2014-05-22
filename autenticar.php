@@ -1,20 +1,29 @@
 <?php 
-	include_once("funciones/mantener_sesion.php");
-	include_once("./funciones/acceder_base_datos.php");
-	include_once("./funciones/administrar_usuarios.php");
-	
+
+function autenticar(){
+	$mensaje="";
 	if ( (isset($_POST["btn_aceptar"])) && ($_POST["btn_aceptar"]=="Aceptar") ){
 		
 		$ausuario = recuperarInfoUsuario($_POST["usuario"], md5($_POST["contrasena"]));
-				
-		$cdestino = "Location: sesion.php";
 		
 		if ($ausuario){
 			iniciarSesion($ausuario['usuario'], $ausuario['esAdmin']);
-			$cdestino = "Location:index.php";
+			$mensaje = "<script>window.location=\"index.php\"</script>";
 		}
-		
+		else{
+			$mensaje = "Usuario y contraseña incorrectos.";
+		}
+	}
+	return $mensaje;
+}
+
+function validarAuth(){
+	session_start();
+	
+	if(isset($_SESSION["cidusuario"])){
+		$cdestino = "Location:index.php";
 		header($cdestino);
 		exit();
-	}
+	}	
+}
 ?>

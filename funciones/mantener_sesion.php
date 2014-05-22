@@ -13,7 +13,6 @@ function validarSesion(){
 }
 
 function iniciarSesion($cUsuario, $bEsAdmin){
-	session_start();
 	$_SESSION["cidusuario"] = $cUsuario;
 	$_SESSION["esAdmin"] = $bEsAdmin;
 }

@@ -1,3 +1,10 @@
+<?php
+	include_once("funciones/mantener_sesion.php");
+	include_once("funciones/acceder_base_datos.php");
+	include_once("funciones/administrar_usuarios.php");
+	include_once("autenticar.php");
+	validarAuth();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/aluxe.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -127,22 +134,26 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<form action="autenticar.php" method="post">
+<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 <h1>Ingresar a mi cuenta</h1>
 <div class="form" align="center">
- <table class="tabla1">
-<tr> </tr>
-<br />
-<td>Usuario:</td> <td> <input type="text"  name="usuario" value="" id="usuario"/></td>
-<tr> </tr>
-<td>Contraseña:</td> <td><input type="password"  name="contrasena" value="" id="contrasena"/></td>
+<table class="tabla1">
+    <tr><td colspan="2">&nbsp;</td></tr>
+    <tr>
+        <br />
+        <td>Usuario:</td> <td> <input type="text"  name="usuario" value="" id="usuario"/></td>
+    </tr>
+    <tr>
+		<td>Contraseña:</td> <td><input type="password"  name="contrasena" value="" id="contrasena"/></td>
+    </tr>
+    <tr>
+    	<td  colspan="2"><br /><span class="errorMsg"><?php echo autenticar(); ?><span></td>
+    </tr>
+    <tr>
+    	<td>&nbsp;</td><td><br /><input name="btn_aceptar" type="submit" id="btn_aceptar" value="Aceptar" /></td>
+    </tr>
 </table>
-<div align="center">
-<td><input name="btn_aceptar" type="submit" id="btn_aceptar" value="Aceptar" /></td>
 </div>
-
-</div>
-
 </form>
 <!-- InstanceEndEditable -->
         </div>
