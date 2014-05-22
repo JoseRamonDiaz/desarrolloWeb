@@ -1,168 +1,249 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-05-2014 a las 22:19:56
+-- Versión del servidor: 5.5.27
+-- Versión de PHP: 5.4.7
 
-CREATE SCHEMA IF NOT EXISTS `alux` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
-CREATE SCHEMA IF NOT EXISTS `new_schema1` ;
-USE `alux` ;
-
--- -----------------------------------------------------
--- Table `alux`.`usuario`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`usuario` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `nombre` VARCHAR(60) NOT NULL ,
-  `apellido` VARCHAR(45) NOT NULL ,
-  `direccion` VARCHAR(20) NOT NULL ,
-  `usuario` VARCHAR(45) NOT NULL ,
-  `contrasena` VARCHAR(100) NOT NULL ,
-  `email` VARCHAR(45) NOT NULL ,
-  `telefono` VARCHAR(45) NOT NULL ,
-  `fax` VARCHAR(45) NULL ,
-  `empresa` VARCHAR(60) NULL ,
-  `cp` VARCHAR(15) NULL ,
-  `pais` VARCHAR(45) NOT NULL ,
-  `ciudad` VARCHAR(45) NOT NULL ,
-  `esAdmin` TINYINT(1) NULL ,
-  PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
-ENGINE = InnoDB;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `alux`.`tipo`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`tipo` (
-  `id` INT UNSIGNED NOT NULL ,
-  `nombre_tipo` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
-ENGINE = InnoDB;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
+--
+-- Base de datos: `alux`
+--
+CREATE DATABASE IF NOT EXISTS `alux` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `alux`;
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `alux`.`modelo`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`modelo` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `nombre` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
-ENGINE = InnoDB;
+--
+-- Estructura de tabla para la tabla `cesta`
+--
 
+CREATE TABLE IF NOT EXISTS `cesta` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(10) unsigned NOT NULL,
+  `id_productos_his` int(10) unsigned NOT NULL,
+  `total` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `id_usuario_idx` (`id_usuario`),
+  KEY `id_producto_idx` (`id_productos_his`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- -----------------------------------------------------
--- Table `alux`.`producto`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`producto` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `tipo` INT UNSIGNED NOT NULL ,
-  `precio` INT NOT NULL ,
-  `nombre` VARCHAR(45) NOT NULL ,
-  `color` VARCHAR(15) NOT NULL ,
-  `descripcion` VARCHAR(200) NOT NULL ,
-  `id_modelo` INT UNSIGNED NOT NULL ,
-  `imagen` VARCHAR(50) NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `tipo_idx` (`tipo` ASC) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
-  CONSTRAINT `tipo`
-    FOREIGN KEY (`tipo` )
-    REFERENCES `alux`.`tipo` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `id_modelo`
-    FOREIGN KEY (`id_modelo` )
-    REFERENCES `alux`.`modelo` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `historial`
+--
 
--- -----------------------------------------------------
--- Table `alux`.`historial`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`historial` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `id_usuarios` INT UNSIGNED NOT NULL ,
-  `id_productos` INT UNSIGNED NOT NULL ,
-  `estado` VARCHAR(45) NOT NULL ,
-  `fecha` VARCHAR(15) NOT NULL,
-  `cantidad` INT(10) UNSIGNED NOT NULL,
-  `total` INT(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `historial` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_usuarios` int(10) unsigned NOT NULL,
+  `id_productos` int(10) unsigned NOT NULL,
+  `estado` varchar(45) NOT NULL,
+  `fecha` varchar(15) NOT NULL,
+  `cantidad` int(10) unsigned NOT NULL,
+  `total` int(10) unsigned NOT NULL,
   `talla` varchar(45) NOT NULL,
   `precio` int(10) unsigned NOT NULL,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
-  INDEX `id_usuario_idx` (`id_usuarios` ASC) ,
-  INDEX `id_pedido_idx` (`id_productos` ASC) ,
-  PRIMARY KEY (`id`) ,
-  CONSTRAINT `id_usuarios`
-    FOREIGN KEY (`id_usuarios` )
-    REFERENCES `alux`.`usuario` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `id_productos`
-    FOREIGN KEY (`id_productos` )
-    REFERENCES `alux`.`producto` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `id_usuario_idx` (`id_usuarios`),
+  KEY `id_pedido_idx` (`id_productos`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `alux`.`cesta`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`cesta` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `id_usuario` INT UNSIGNED NOT NULL ,
-  `id_productos_his` INT UNSIGNED NOT NULL ,
-  `total` INT UNSIGNED NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `id_usuario_idx` (`id_usuario` ASC) ,
-  INDEX `id_producto_idx` (`id_productos_his` ASC) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
-  CONSTRAINT `id_usuario`
-    FOREIGN KEY (`id_usuario` )
-    REFERENCES `alux`.`usuario` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `id_producto_his`
-    FOREIGN KEY (`id_productos_his` )
-    REFERENCES `alux`.`producto` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Estructura de tabla para la tabla `modelo`
+--
 
+CREATE TABLE IF NOT EXISTS `modelo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
 
--- -----------------------------------------------------
--- Table `alux`.`talla`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `alux`.`talla` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `id_producto` INT UNSIGNED NOT NULL ,
-  `talla1` VARCHAR(45) NULL ,
-  `cantidad1` INT UNSIGNED NULL ,
-  `talla2` VARCHAR(45) NULL ,
-  `cantidad2` INT UNSIGNED NULL ,
-  `talla3` VARCHAR(45) NULL ,
-  `cantidad3` INT UNSIGNED NULL ,
-  `talla4` VARCHAR(45) NULL ,
-  `cantidad4` INT UNSIGNED NULL ,
-  `talla5` VARCHAR(45) NULL ,
-  `cantidad5` INT UNSIGNED NULL ,
-  PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
-  INDEX `id_producto_idx` (`id_producto` ASC) ,
-  CONSTRAINT `id_producto`
-    FOREIGN KEY (`id_producto` )
-    REFERENCES `alux`.`producto` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Volcado de datos para la tabla `modelo`
+--
 
-USE `new_schema1` ;
+INSERT INTO `modelo` (`id`, `nombre`) VALUES
+(1, 'Niños'),
+(2, 'Caballeros'),
+(3, 'Niñas'),
+(4, 'Damas');
 
+-- --------------------------------------------------------
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+--
+-- Estructura de tabla para la tabla `producto`
+--
+
+CREATE TABLE IF NOT EXISTS `producto` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo` int(10) unsigned NOT NULL,
+  `precio` int(11) NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `color` varchar(15) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `id_modelo` int(10) unsigned NOT NULL,
+  `imagen` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `tipo_idx` (`tipo`),
+  KEY `id_modelo` (`id_modelo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `promociones`
+--
+
+CREATE TABLE IF NOT EXISTS `promociones` (
+  `id` tinyint(1) unsigned NOT NULL,
+  `id_producto` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_producto` (`id_producto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `promociones`
+--
+
+INSERT INTO `promociones` (`id`, `id_producto`) VALUES
+(1, NULL),
+(2, NULL),
+(3, NULL),
+(4, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `talla`
+--
+
+CREATE TABLE IF NOT EXISTS `talla` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_producto` int(10) unsigned NOT NULL,
+  `talla1` varchar(45) DEFAULT NULL,
+  `cantidad1` int(10) unsigned DEFAULT NULL,
+  `talla2` varchar(45) DEFAULT NULL,
+  `cantidad2` int(10) unsigned DEFAULT NULL,
+  `talla3` varchar(45) DEFAULT NULL,
+  `cantidad3` int(10) unsigned DEFAULT NULL,
+  `talla4` varchar(45) DEFAULT NULL,
+  `cantidad4` int(10) unsigned DEFAULT NULL,
+  `talla5` varchar(45) DEFAULT NULL,
+  `cantidad5` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `id_producto_idx` (`id_producto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipo`
+--
+
+CREATE TABLE IF NOT EXISTS `tipo` (
+  `id` int(10) unsigned NOT NULL,
+  `nombre_tipo` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id`, `nombre_tipo`) VALUES
+(1, 'Guayabera'),
+(2, 'Vestidos'),
+(3, 'Zapatos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `apellido` varchar(45) NOT NULL,
+  `direccion` varchar(60) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `contrasena` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `telefono` varchar(45) NOT NULL,
+  `fax` varchar(45) DEFAULT NULL,
+  `empresa` varchar(60) DEFAULT NULL,
+  `cp` varchar(15) DEFAULT NULL,
+  `pais` varchar(45) NOT NULL,
+  `ciudad` varchar(45) NOT NULL,
+  `esAdmin` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `usuario` (`usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `direccion`, `usuario`, `contrasena`, `email`, `telefono`, `fax`, `empresa`, `cp`, `pais`, `ciudad`, `esAdmin`) VALUES
+(1, 'admin', 'admin', 'c29diag#228A', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@hotmail.com', '9234424', '9237602', 'alux', '97240', 'MX', 'MER', 0),
+(2, 'Yussel', 'Paredes', 'c39', 'Yussel', 'e9dd99189ea24cf7b2ce2cbca5ea65f6', 'yussel_paredes@hotmail.com', '9999999999', NULL, NULL, '97203', 'MX', 'MER', 0);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `cesta`
+--
+ALTER TABLE `cesta`
+  ADD CONSTRAINT `cesta_ibfk_2` FOREIGN KEY (`id_productos_his`) REFERENCES `producto` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `cesta_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `historial`
+--
+ALTER TABLE `historial`
+  ADD CONSTRAINT `historial_ibfk_2` FOREIGN KEY (`id_productos`) REFERENCES `producto` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `historial_ibfk_1` FOREIGN KEY (`id_usuarios`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`tipo`) REFERENCES `tipo` (`id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `promociones`
+--
+ALTER TABLE `promociones`
+  ADD CONSTRAINT `promociones_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `talla`
+--
+ALTER TABLE `talla`
+  ADD CONSTRAINT `talla_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
