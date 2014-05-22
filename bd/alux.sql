@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `direccion`, `usuario`, `contrasena`, `email`, `telefono`, `fax`, `empresa`, `cp`, `pais`, `ciudad`, `esAdmin`) VALUES
-(1, 'admin', 'admin', 'c29diag#228A', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@hotmail.com', '9234424', '9237602', 'alux', '97240', 'MX', 'MER', 0),
+(1, 'admin', 'admin', 'c29diag#228A', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@hotmail.com', '9234424', '9237602', 'alux', '97240', 'MX', 'MER', 1),
 (2, 'Yussel', 'Paredes', 'c39', 'Yussel', 'e9dd99189ea24cf7b2ce2cbca5ea65f6', 'yussel_paredes@hotmail.com', '9999999999', NULL, NULL, '97203', 'MX', 'MER', 0);
 
 --
