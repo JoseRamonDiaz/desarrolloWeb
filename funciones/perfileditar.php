@@ -17,15 +17,15 @@ include_once("acceder_base_datos.php");
     $ccp = $_POST["cp_txt"];
    $cpais = $_POST["pais"];
   $cciudad = $_POST["city_txt"];
-   $cusuario = $_POST["usuario"];
-    $ccontrasena = (md5($_POST["contrasena"]));
+   $cusuario = $_GET["cidusuario"];
+   // $ccontrasena = (md5($_POST["contrasena"]));
    
       $cquery = "UPDATE usuario";
    $cquery .= " SET nombre = '$cnombre',";
    $cquery .= " apellido = '$capellidos',";
    $cquery .= " direccion = '$cdireccion',";
-   $cquery .= " usuario = '$cusuario',";
-   $cquery .= " contrasena = '$ccontrasena',";
+   //$cquery .= " usuario = '$cusuario',";
+   //$cquery .= " contrasena = '$ccontrasena',";
    $cquery .= " email = '$cmail',";
    $cquery .= " telefono = '$ctelefono',";
    $cquery .= " fax = '$cfax',";
@@ -36,10 +36,11 @@ include_once("acceder_base_datos.php");
    $cquery .= " WHERE (id = '$cid_Usuario')";
    
    if ( editarDatos($pconexion, $cquery) )
-     $curl = "Location:".$GLOBALS["raiz_sitio"]."perfil.php?cidusuario=$cusuario";  
+     $curl = "Location:".$GLOBALS["raiz_sitio"]."index.php";  
    else
      $curl =
-"Location:".$GLOBALS["raiz_sitio"]."editarperfil.php?cidusuario=$cidusuario";  
+//"Location:".$GLOBALS["raiz_sitio"]."editarperfil.php?cidusuario=$cidusuario"; 
+"Location:".$GLOBALS["raiz_sitio"]."index.php"; 
     
    cerrarConexion($pconexion);
    header($curl);
