@@ -23,6 +23,7 @@ validarSesion();
       </script>
     <!-- InstanceBeginEditable name="head" -->
     <script src="js/muestraProductos.js"></script>
+    <script src="js/cookie.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 

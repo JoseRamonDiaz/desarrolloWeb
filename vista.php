@@ -15,6 +15,7 @@ $adatos = recuperarInfoProducto($id);
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <script src="js/agregar.js"></script>
+    <script src="js/cookie.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 
