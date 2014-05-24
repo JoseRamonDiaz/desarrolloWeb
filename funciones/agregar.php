@@ -153,15 +153,15 @@ function subirimagen(){
       if ($resultado){
 		  $nombre = $_FILES['imagen']['name'];
         //@mysql_query("INSERT INTO producto (imagen) VALUES ('$nombre')") ;
-        echo "el archivo ha sido movido exitosamente";
+       // echo "el archivo ha sido movido exitosamente";
       } else {
-        echo "ocurrio un error al mover el archivo.";
+        //echo "ocurrio un error al mover el archivo.";
       }
     } else {
-      echo $_FILES['imagen']['name'] . ", este archivo existe";
+      //echo $_FILES['imagen']['name'] . ", este archivo existe";
     }
   } else {
-    echo "archivo no permitido, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes";
+    //echo "archivo no permitido, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes";
   }
 }
 	}

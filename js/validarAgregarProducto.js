@@ -35,10 +35,12 @@ function validarForm(){
         
     var isValid = errores=="";
     if(isValid){
+		alert("¡Producto Registrado con exito!");
         return true;
     }
     else{
         provideFeedback(errores);
+		alert("Por favor llene los campos obligatorios.");
         return false;
     }
 }
