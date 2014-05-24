@@ -555,15 +555,20 @@ margin-top:20px;
 	
 	}
 	
-	#botonvista{
+#botonvista{
 		
-		background-image:url(../imagenes/menu.png);
-		color:#FFF}
+background-image:url(../imagenes/menu.png);
+color:#FFF}
 		
-		.tabla tr {
-			width:900px;
-			}
+.tabla tr {
+width:900px;
+}
 			
-			.botones{
-				background-image:url(../imagenes/menu.png);
-				color:#FFF;}
+.botones{
+background-image:url(../imagenes/menu.png);
+color:#FFF;}
+
+.cantidad{
+	width:60px;}
+				
+				
