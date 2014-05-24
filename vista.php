@@ -14,13 +14,20 @@ $adatos = recuperarInfoProducto($id);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
-    <script src="js/agregar.js"></script>
     <script src="js/cookie.js"></script>
+    <script src="js/cerrarSesion.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 
 <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="head" -->
+     <script src="js/agregar.js"></script>
+    <!-- InstanceEndEditable -->
+</head>
 
+<body>
+    
+        
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <div class="detalles_producto" align="center"> 
@@ -57,6 +64,8 @@ $adatos = recuperarInfoProducto($id);
     </div>
 </div>
 
+<!-- InstanceEndEditable -->
+        </div>
 
 </body>
 <!-- InstanceEnd --></html>

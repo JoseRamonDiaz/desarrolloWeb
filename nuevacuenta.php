@@ -12,26 +12,15 @@ validarSesion();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/cookie.js"></script>
+    <script src="js/cerrarSesion.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Registro de cuenta</title>
 <!-- InstanceEndEditable -->
-    <script>
-       pic1 = new Image();
-       pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
-       pic2 = new Image();
-       pic2.src = 'imagenes/ZapatosCaballero.jpg';
-       pic3 = new Image();
-       pic3.src = 'imagenes/GuayaberaNinos.jpg';
-       pic4 = new Image();
-       pic4.src = 'imagenes/VestidosNinas.jpg';
-      </script>
-	      
-
-<!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceBeginEditable name="head" -->
 	  <script src="js/validaciones.js"></script>
 <script src="js/validarCrearCuenta.js"></script>
 <!-- InstanceEndEditable -->
-
 </head>
 
 <body>
@@ -65,19 +54,16 @@ validarSesion();
             	</div>
             
                 <div id="bienvenido" >
-                <div class="principal3">
                  
                     <ul class="menu">
                         <?php
                             if(isset($_SESSION['cidusuario'])) {
                             	if(isset($_SESSION['esAdmin']) && $_SESSION['esAdmin']) {
                         ?>   
-                       
                         <li> <a>Administración</a> 
                         <ul>
                             <li> <a href="usuarios.php">Usuarios</a></li>
-                          
-                            <li> <a href="productos.php">Producto</a></li>
+                            <li> <a href="productos.php">Productos</a></li>
                            <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
                             
                         </ul>
@@ -88,20 +74,20 @@ validarSesion();
                         		}
                         ?>
                             	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
-                            	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
+                            	<li><a href="Javascript:cerrarCesion()">Cerrar sesión  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
                             else {
                         ?>
                             <li><a href="crearcuenta.php" >Crear cuenta </a></li>
-                            <li><a href="sesion.php">Iniciar sesion</a></li>
+                            <li><a href="sesion.php">Iniciar sesión</a></li>
                         <?php
                             }
                         ?>
                     </ul>
                 </div>
               </div>  
-        	</div>
+        	
             
             <div class="header">
                 <div id="logo"><a href="index.php"><img src="imagenes/logoo.png" width="250" height="158"/></a></div>
@@ -109,7 +95,7 @@ validarSesion();
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
+   <input type="text"  placeholder="Buscar productos" name="search"/> 
 </FORM>
    
                 </div>

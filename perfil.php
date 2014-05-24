@@ -15,6 +15,8 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
+    <script src="js/cookie.js"></script>
+    <script src="js/cerrarSesion.js"></script>
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
@@ -73,7 +75,7 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
                         		}
                         ?>
                             	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
-                            	<li><a href="cerrar_sesion.php">Cerrar sesión  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
+                            	<li><a href="Javascript:cerrarCesion()">Cerrar sesión  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
                             else {
