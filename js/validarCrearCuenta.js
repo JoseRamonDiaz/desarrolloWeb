@@ -12,8 +12,14 @@ function validarFrmAgregar(){
     var tel = document.getElementById("telefono").value;
     var direccion = document.getElementById("direc1").value;
     var ciudad = document.getElementById("ciudad").value;
-    var usuario = document.getElementById("usuario").value;
-    var pass = document.getElementById("contrasena").value;
+    var usuario;
+    var user = document.getElementById("usuario");
+    if(user!=null)
+        usuario = document.getElementById("usuario").value;
+    var pass;
+    var contra = document.getElementById("contrasena");
+    if(contra!=null)
+        pass = document.getElementById("contrasena").value;
     var pass2;
     //Esto es para cuando hay que validar editarUsuario.php, por que no tiene contrasena2
     var contra2 = document.getElementById("contrasena2");
@@ -34,9 +40,9 @@ function validarFrmAgregar(){
         errores.push("direc1");
     if(!ciudadValida(ciudad))
         errores.push("ciudad");
-    if(!usuarioValido(usuario))
+    if(user != null && !usuarioValido(usuario))
         errores.push("usuario");
-    if(!passValido(pass))
+    if(contra != null && !passValido(pass))
         errores.push("contrasena");
     if(contra2 != null && !pass2Valido(pass, pass2))
         errores.push("contrasena2")

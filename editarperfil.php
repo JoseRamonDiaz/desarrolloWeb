@@ -27,6 +27,8 @@ return confirm( mensaje );
 }
 
    </script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/validarCrearCuenta.js"></script>
     <!-- InstanceEndEditable -->
 </head>
 
@@ -151,7 +153,7 @@ return confirm( mensaje );
         <div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
-<form method="post" action="funciones/perfileditar.php" name="form_editar">
+<form method="post" action="funciones/perfileditar.php" name="form_editar" id="frm_agregar">
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" /> 
 <tr> </tr>
 <br />
