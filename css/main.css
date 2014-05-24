@@ -563,3 +563,7 @@ margin-top:20px;
 		.tabla tr {
 			width:900px;
 			}
+			
+			.botones{
+				background-image:url(../imagenes/menu.png);
+				color:#FFF;}

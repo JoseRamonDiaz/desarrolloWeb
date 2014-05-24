@@ -196,8 +196,8 @@ $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
 </table>
 </div>
 <div class="boton" align="center">
-<a href="usuarios.php"> <input type="button" name="volver" value="Regresar" id="volver"/> </a>
-<a href="./editarperfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> "> <input type="submit" value="Editar" name="editar" id="editar" /></a>
+<a href="usuarios.php"> <input type="button" name="volver" value="Regresar" id="volver" class="botones"/> </a>
+<a href="./editarperfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> "> <input type="submit" value="Editar" name="editar" id="editar" class="botones" /></a>
 </div>
 
 <br />

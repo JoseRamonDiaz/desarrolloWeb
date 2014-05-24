@@ -23,6 +23,12 @@ include_once("modelo.php");
     <!-- InstanceBeginEditable name="head" -->
 		  <script src="js/validaciones.js"></script>
 	  <script src="js/validarAgregarProducto.js"></script>
+      <script language="JavaScript">
+function confirmar ( mensaje ) {
+return confirm( mensaje );
+}
+
+   </script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -236,7 +242,7 @@ include_once("modelo.php");
 </table>
 </div>
 <div class="boton" align="center">
-  <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/>
+  <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/><a href="productos.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
 </div> </form>
 
 

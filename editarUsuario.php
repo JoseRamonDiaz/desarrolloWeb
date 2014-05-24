@@ -23,6 +23,12 @@ validarSesion();
     <!-- InstanceBeginEditable name="head" -->
 	  <script src="js/validaciones.js"></script>
     <script src="js/validarCrearCuenta.js"></script>
+         <script language="JavaScript">
+function confirmar ( mensaje ) {
+return confirm( mensaje );
+}
+
+   </script>
     <!-- InstanceEndEditable -->
 </head>
 
@@ -456,7 +462,7 @@ validarSesion();
 </table>
 </div>
 <div class="boton" align="center">
- <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/>
+ <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/> <a href="usuarios.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
 </div>
 
 <br />

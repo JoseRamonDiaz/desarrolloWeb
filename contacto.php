@@ -155,7 +155,7 @@
     
   </p>
   <p>
-        <input type="submit" name="submit" value="Enviar" />
+        <input type="submit" name="submit" value="Enviar" class="botones" />
   </p>
 </form>
 <p>&nbsp;</p>

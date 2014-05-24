@@ -167,7 +167,7 @@ return confirm( mensaje );
     <span id="mailError" class="errorFeedback errorSpan">El correo es incorrecto</span>
 </td>
 <tr> </tr>
-<td><span >*</span>Telefono:</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/>
+<td><span >*</span>Telefono (10 digitos):</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/> 
     <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
 </td>
 <tr> </tr>
@@ -464,7 +464,7 @@ return confirm( mensaje );
 </table>
 </div>
 <div class="boton" align="center">
- <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" /> <input type="button" value="Cancelar" />
+ <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones" /> <a href="usuarios.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
 </div>
 </form>
 <br />

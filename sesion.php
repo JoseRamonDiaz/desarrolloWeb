@@ -152,7 +152,7 @@
     	<td  colspan="2"><br /><span class="errorMsg"><?php echo autenticar(); ?><span></td>
     </tr>
     <tr>
-    	<td>&nbsp;</td><td><br /><input name="btn_aceptar" type="submit" id="btn_aceptar" value="Aceptar" /></td>
+    	<td>&nbsp;</td><td><br /><input name="btn_aceptar" type="submit" id="btn_aceptar" value="Entrar" class="botones" /></td>
     </tr>
 </table>
 </div>

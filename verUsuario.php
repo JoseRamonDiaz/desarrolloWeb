@@ -194,7 +194,7 @@ validarSesion();?>
 </table>
 </div>
 <div class="boton" align="center">
-</a><a href="usuarios.php"> <input type="button" name="btn_grabar" value="Regresar" id="btn_grabar"/> </a>
+</a><a href="usuarios.php"> <input type="button" name="btn_grabar" value="Regresar" id="btn_grabar" class="botones"/> </a>
 </div>
 
 <br />

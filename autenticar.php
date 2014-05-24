@@ -2,7 +2,7 @@
 
 function autenticar(){
 	$mensaje="";
-	if ( (isset($_POST["btn_aceptar"])) && ($_POST["btn_aceptar"]=="Aceptar") ){
+	if ( (isset($_POST["btn_aceptar"])) && ($_POST["btn_aceptar"]=="Entrar") ){
 		
 		$ausuario = recuperarInfoUsuario($_POST["usuario"], md5($_POST["contrasena"]));
 		
