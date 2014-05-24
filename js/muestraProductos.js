@@ -32,13 +32,31 @@ function crearContenidoTabla(){
             '<td width="10">&nbsp;</td>'+
             '<td>'+(Number(cantidad))*(Number(precio))+'</td>'+
             '<td width="10">&nbsp;</td>'+
-            '<td><a href="#"><img id="img_eliminar" src="imagenes/eliminar.png"/></a></td></tr>');
+            '<td><a href="Javascript:eliminarDeCesta('+i+')"><img id="img_eliminar" src="imagenes/eliminar.png"/></a></td></tr>');
     }
     return contenidoTabla;
 }
 
+function eliminarDeCesta(id){
+    var numProductos = GetCookie("productos", document.cookie);
+    
+    for(var i = id; i < numProductos; i++){
+        SetCookie("prod_id" + i,GetCookie("prod_id"+(i+1), document.cookie));
+    SetCookie("prod_talla" + i,GetCookie("prod_talla"+(i+1), document.cookie));
+    SetCookie("prod_cantidad" + i,GetCookie("prod_cantidad" + (i + 1), document.cookie));
+    SetCookie("prod_nombre"+i, GetCookie("prod_nombre"+(i+1), document.cookie));
+    SetCookie("prod_precio"+i, GetCookie("prod_precio"+(i+1), document.cookie));
+    }
+    //restar 1 a numProductos y setear a cookie
+    SetCookie("productos",(numProductos-1));
+    actualizaPantalla();
+}
+
 function actualiza(id, value){
     SetCookie("prod_cantidad"+id,value);
+}
+
+function actualizaPantalla(){
     muestraTablaProductos();
     muestraTotal();
     muestraCantidadProductos();
