@@ -86,7 +86,7 @@ function recuperarInfoProducto($cid_producto){
   $cquery .= "FROM producto JOIN modelo "; 
  $cquery  .= " ON producto.id_modelo = modelo.id_modelo";
  $cquery .= " WHERE id = '$cid_producto'";*/
- $cquery = "SELECT producto.id, producto.precio, producto.nombre,  producto.color, producto.descripcion, modelo.nombre AS modelo, producto.imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5
+ $cquery = "SELECT producto.id, producto.precio, producto.nombre,  producto.color, producto.descripcion AS descripcion, modelo.nombre AS modelo, producto.imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5
 FROM producto
 JOIN modelo ON producto.id_modelo = modelo.id
 JOIN talla ON talla.id_producto = producto.id
@@ -149,19 +149,20 @@ return confirm( mensaje );
 	   $ccontenido .= "<tr>";
 	   $ccontenido .= "<td align=\"center\">".$adatos["Id"]."</td>";
 	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";	
-	   $ccontenido .= "<td> <a href=\"verUsuario.php?cid_Usuario=$cid_Usuario\">".$adatos["Usuario"]."</a></td>"; //**
+	   $ccontenido .= "<td>".$adatos["Usuario"]."</td>"; //**
 	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
 	   $ccontenido .= "<td>".$adatos["Nombre"]."</td>";
 	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
 	   $ccontenido .= "<td align=\"center\">".$adatos["Apellido"]."</td>";
 	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
 	   $ccontenido .= "<td>".$adatos["Email"]."</td>";
-	   $ccontenido .= "<td width=\"10\">&nbsp;</td>"; //***
 	   $ccontenido .= "<td><a href=\"./editarUsuario.php?cid_Usuario=$cid_Usuario\">"; //***
-	   $ccontenido .= "<img src=\"imagenes/lapiz.gif\" border=\"0\" alt=\"Editar Usuario\" width=\"30\" height=\"25\"></a></td>";
+	   $ccontenido .= "<img src=\"imagenes/lapiz.gif\" border=\"0\" alt=\"Editar Usuario\" title=\"Editar\" width=\"30\" height=\"25\"></a></td>";
 	   $ccontenido .= "<td><a href=\"funciones/borrar.php?cid_Usuario=$cid_Usuario\" onclick=\"return confirmar(' ¿Est&aacute; seguro que desea eliminar el usuario?')\">"; //***
 
-	   $ccontenido .= "<img src=\"imagenes/borrar.gif\" border=\"0\" alt=\"Eliminar Usuario\"></a></td>";
+	   $ccontenido .= "<img src=\"imagenes/borrar.gif\" border=\"0\" alt=\"Eliminar Usuario\" title=\"Eliminar\"></a></td>";
+	   $ccontenido .= "<td><a href=\"./verUsuario.php?cid_Usuario=$cid_Usuario\">"; //***
+       $ccontenido .= "<img src=\"imagenes/view.png\" border=\"0\" alt=\"Ver Producto\" title=\"Ver\"></a></td>";
 	   $ccontenido .= "</tr>";	
 	 }   
    }	 
@@ -1030,11 +1031,81 @@ return $adatos;
 }
 
 
+//------------------------------------------------------
 
+function productosAdmin(){
+	 echo '<script language="JavaScript">
+function confirmar ( mensaje ) {
+return confirm( mensaje );
+}
 
+   </script>';
+	
+	$ccontenido = "";
+ //Conexión con la base de datos
+ $pconexion = abrirConexion();
+ //Selección de la base de datos
+ seleccionarBaseDatos($pconexion);
+ //Construcción de la sentencia SQL
+ $cquery = "SELECT producto.id AS Id, tipo.nombre_tipo AS Categoria, producto.nombre AS Nombre, ";
+ $cquery .= " modelo.nombre AS Modelo, producto.imagen AS Imagen";
+ $cquery .= " FROM producto";
+ $cquery .= "  JOIN tipo ON producto.tipo=tipo.id JOIN modelo ON producto.id_modelo=modelo.id ";
+ 
 
+  
+ //Se ejecuta la sentencia SQL
+ $lresult = mysql_query($cquery, $pconexion); 
+	 
+ if (!$lresult) {
+   $cerror = "No fue posible recuperar la información de la base de datos.<br>";
+   $cerror .= "SQL: $cquery <br>";
+   $cerror .= "Descripción: ".mysql_error($pconexion);
+   die($cerror);
+ } 
+ else{ 
+   //Verifica que la consulta haya devuelto por lo menos un registro
+   if (mysql_num_rows($lresult) > 0){
+  	 //Recorre los registros arrojados por la consulta SQL
+	 while ($adatos = mysql_fetch_array($lresult)){
+	 
+       $cid_producto = $adatos["Id"]; //**
+	   $ccontenido .= "<tr>";
+	   $ccontenido .= "<td align=\"center\">".$adatos["Id"]."</td>";
+	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";	
+	   $ccontenido .= "<td><img src=imagenes/".$adatos["Imagen"]." width=\"50px\" height= \"50px\"/><br/></td>"; //**
+	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
+	   $ccontenido .= "<td>".$adatos["Nombre"]."</td>";
+	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
+	   $ccontenido .= "<td align=\"center\">".utf8_encode($adatos["Modelo"])."</td>";
+	   $ccontenido .= "<td width=\"10\">&nbsp;</td>";
+	   $ccontenido .= "<td>".$adatos["Categoria"]."</td>";
+	   $ccontenido .= "<td><a href=\"./editarProducto.php?cid_producto=$cid_producto\">"; //***
+	   $ccontenido .= "<img src=\"imagenes/lapiz.gif\" border=\"0\" alt=\"Editar Usuario\" title=\"Editar\" width=\"30\" height=\"25\"></a></td>";
+	   $ccontenido .= "<td><a href=\"funciones/borrarproducto.php?cid_producto=$cid_producto\" onclick=\"return confirmar(' ¿Est&aacute; seguro que desea eliminar el producto?')\">"; //***
 
+	   $ccontenido .= "<img src=\"imagenes/borrar.gif\" border=\"0\" alt=\"Eliminar Usuario\" title=\"Eliminar\"></a></td>";
+	   	
+	   
+	   	   $ccontenido .= "<td><a href=\"./verproducto.php?cid_producto=$cid_producto\">"; //***
 
+	   $ccontenido .= "<img src=\"imagenes/view.png\" border=\"0\" alt=\"Ver Producto\" title=\"Ver\"></a></td>";
+	   $ccontenido .= "</tr>";
+	 }   
+   }	 
+ }	 
+ 
+ mysql_free_result($lresult); 
+ 
+ if ( empty($ccontenido) ){
+   $ccontenido .= "<tr>";
+   $ccontenido .= "<td>No se obtuvieron resultados</td>";		
+   $ccontenido .= "</tr>";
+ }
+ 
+ cerrarConexion($pconexion); 
+ return $ccontenido;
+	}
 
 
 

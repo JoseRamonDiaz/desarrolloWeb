@@ -136,10 +136,39 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-		<div> 
-        <h2>Productos </h2>
-        
-        </div>
+		<h1> Productos </h1>
+<div>
+<table>
+
+
+<tr> 
+<td><h3><a href="agregarproducto.php"><img src="imagenes/add_article.png" /> </a> <b>Agregar Producto</b></h3> </td>
+</tr>
+<td><table id="tablaUsuarios" class="tabla">
+
+ 
+  <tr>
+    <th class="primero">ID</th>
+	<th width="10px">&nbsp;</th>
+    <th>Imagen</th>
+	<th width="10px">&nbsp;</th>
+    <th>Nombre</th>
+	<th width="10px">&nbsp;</th>
+    <th>Modelo</th>
+	<th width="10px">&nbsp;</th>
+    <th>Categoria</th>
+	<th width="10px">&nbsp;</th>
+    <th width="10px">&nbsp;</th>	
+	<th class="ultimo" width="10px">&nbsp;</th>
+  </tr>
+  <?php 
+    echo productosAdmin();  
+  ?>
+</table>
+</td>
+</table>
+
+</div>
 		
 		
 		<!-- InstanceEndEditable -->

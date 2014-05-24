@@ -1,9 +1,12 @@
 <?php
-	include_once("./funciones/config.inc.php"); 
-	include_once("./funciones/acceder_base_datos.php");
-	include_once("./funciones/listar.php");
-	include_once("funciones/mantener_sesion.php");
+include_once("./funciones/config.inc.php"); 
+include_once("./funciones/acceder_base_datos.php");
+include_once("./funciones/listar.php");
+include_once("funciones/mantener_sesion.php");
 	validarSesion();
+$adatos;
+$adatos = recuperarInfoProducto($_GET["cid_producto"]);
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,7 +17,19 @@
     <link rel="shortcut icon" href="imagenes/favicon.ico" />
     <!-- InstanceBeginEditable name="doctitle" -->
 <title>Tienda Alux</title>
+
+
 <!-- InstanceEndEditable -->
+    <script>
+       pic1 = new Image();
+       pic1.src = 'imagenes/GuayaberaCaballeros.jpg';
+       pic2 = new Image();
+       pic2.src = 'imagenes/ZapatosCaballero.jpg';
+       pic3 = new Image();
+       pic3.src = 'imagenes/GuayaberaNinos.jpg';
+       pic4 = new Image();
+       pic4.src = 'imagenes/VestidosNinas.jpg';
+      </script>
     <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -59,7 +74,7 @@
                         <li> <a>Administración</a> 
                         <ul>
                             <li> <a href="usuarios.php">Usuarios</a></li>
-                            <li> <a href="productos.php">Productos</a></li>
+                            <li> <a href="productos.php">Producto</a></li>
                            <!-- <li> <a href="editarproducto.php">Editar&nbsp;Producto</a></li> -->
                             
                         </ul>
@@ -70,13 +85,13 @@
                         		}
                         ?>
                             	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
-                            	<li><a href="cerrar_sesion.php">Cerrar sesión  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
+                            	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
                             else {
                         ?>
                             <li><a href="crearcuenta.php" >Crear cuenta </a></li>
-                            <li><a href="sesion.php">Iniciar sesión</a></li>
+                            <li><a href="sesion.php">Iniciar sesion</a></li>
                         <?php
                             }
                         ?>
@@ -91,7 +106,7 @@
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos" name="search"/> 
 </FORM>
    
                 </div>
@@ -135,37 +150,21 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1> Usuarios </h1>
-<div>
-<table>
-
-
-<tr> 
-<td><h3><a href="nuevacuenta.php"><img src="imagenes/add_article.png" /> </a> <b>Nuevo Usuario</b></h3> </td>
-</tr>
-<td><table id="tablaUsuarios" class="tabla">
-
-  <tr>
-    <th class="primero">ID</th>
-	<th width="10">&nbsp;</th>
-    <th>Usuario</th>
-	<th width="10">&nbsp;</th>
-    <th>Nombre</th>
-	<th width="10">&nbsp;</th>
-    <th>Apellido</th>
-	<th width="10">&nbsp;</th>
-    <th>Email</th>
-	<th width="10">&nbsp;</th>
-    <th width="10">&nbsp;</th>	
-	<th class="ultimo" width="10">&nbsp;</th>
-  </tr>
-  <?php 
-    echo listarUsuarios();  
-  ?>
-</table>
-</td>
-</table>
-
+<div class="detalles_producto" align="center"> 
+	<img src="imagenes/<?php echo $adatos["imagen"] ?>" width= "250px" height= "250px"/>
+    <div id="vistaproducto">
+        <font size="+1"> <b>Modelo: </b>  <?php echo  utf8_encode ( $adatos["modelo"])?> </font><br />
+        <font size="+1"> <b>Colores: </b> <?php echo $adatos["color"]?> </font><br />
+      <font size="+1"> <b>Tallas: </b> <?php echo $adatos["talla1"]?> <?php echo $adatos["talla2"]?> <?php echo $adatos["talla3"]?>  <?php echo $adatos["talla4"]?>  <?php echo $adatos["talla5"]?> </font> <br />
+        <font size="+1"> <b>Precio: </b><?php echo $adatos["precio"]?></font><br />
+       <font size="+1"> <b> Descripción: </b> <?php echo utf8_encode( $adatos["descripcion"])?> <br /> </font>
+        
+   
+    </div>
+   
+    <div align="right">
+     <br />
+    <a href="productos.php"> <input type="button" value="Regresar" id="botonvista" /> </a> </div>
 </div>
 
 

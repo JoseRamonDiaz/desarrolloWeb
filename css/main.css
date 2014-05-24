@@ -543,3 +543,20 @@ margin-top:20px;
 .errorFeedback{
     visibility: hidden;
 }
+
+
+#vistaproducto{
+	display:inline-block;
+	
+	padding-left:50px;
+	
+	}
+	
+	#botonvista{
+		
+		background-image:url(../imagenes/menu.png);
+		color:#FFF}
+		
+		.tabla tr {
+			width:900px;
+			}
