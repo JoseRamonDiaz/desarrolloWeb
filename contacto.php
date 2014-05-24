@@ -13,6 +13,8 @@
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
     <!-- InstanceBeginEditable name="head" -->
+    <script src="js/validaciones.js"></script>
+    <script src="js/validarContacto.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -135,21 +137,28 @@
 <h1>Contacto</h1>
 
 <form id="formContacto" name="formContacto" method="post" action="correo.php">
+    <div id="errorDiv"></div>
   <p>
 <label for="name">Nombre Completo:<br>
-    <input id="name" name="name" type="text" size="27"> </label>
+    <input id="name" name="name" type="text" size="27"> 
+    <span id="nameError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
+</label>
   </p>
   <p>
    <label for="email">Correo Electrónico:<br>
-    <input id="email" name="email" type="text" size="27"> </label>
+    <input id="email" name="email" type="text" size="27"> 
+    <span id="emailError" class="errorFeedback errorSpan">El correo es incorrecto</span>
+        </label>
   </p>
   <p>
  <label for="subject">Asunto:<br>
     <input id="subject" name="subject" type="text" size="27">
+    <span id="subjectError" class="errorFeedback errorSpan">Por favor agrega un asunto</span>
     </label>
   </p>
     <label for="message">Mensaje: <br>
     <textarea name="message" id="message" rows="5" cols="30"></textarea>
+    <span id="messageError" class="errorFeedback errorSpan">Por favor introduce un mensaje</span>
     </label>
   <p>
     
