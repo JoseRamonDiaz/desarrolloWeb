@@ -428,21 +428,23 @@ return confirm( mensaje );
 </div>
 <div class="form">
  <table class="tabla1">
- <h2>Datos de Usuario</h2>
-<th>Datos Obligatorios </th>
+ <h2>Cambiar Contraseña</h2>
+ <input type="button"  onclick="window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=870,height=200,resizable=yes')" src="contrasena.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?>" value="Nueva Contraseña" class="botones" />
+
+<!--<th>Datos Obligatorios </th> -->
 <tr> </tr>
 <br />
-<td>Usuario:</td> <td><input type="text" name="usuario" value="<?php echo $adatos["usuario"]?>" /> </td>
+<!--<td>Usuario:</td> <td><input type="text" name="usuario" value="<?php //echo $adatos["usuario"]?>" /> </td>-->
 <br />
 
 <tr> </tr>
-<td>Contraseña:</td> <td><input type="password" name="contrasena" value="<?php echo $adatos["contrasena"]?>" /></td>
+<!--<td>Contraseña:</td> <td><input type="password" name="contrasena" value="<?php // echo $adatos["contrasena"]?>" /></td> -->
 
 
 </table>
 </div>
 <div class="boton" align="center">
- <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/> <a href="perfil.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
+ <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/> <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?>"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
 </div>
 
 <br />
