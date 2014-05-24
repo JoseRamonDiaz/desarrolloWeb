@@ -134,25 +134,28 @@
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1>Contacto</h1>
 
-<form id="formContacto" name="formContacto" method="post" action="">
+<form id="formContacto" name="formContacto" method="post" action="correo.php">
   <p>
-    <label for="correo">Correo electrónico</label>
-    <input type="text" name="correo" id="correo" />
+<label for="name">Nombre Completo:<br>
+    <input id="name" name="name" type="text" size="27"> </label>
   </p>
   <p>
-    <label for="correo">Asunto</label>
-    <input type="text" name="asunto" id="asunto" />
+   <label for="email">Correo Electrónico:<br>
+    <input id="email" name="email" type="text" size="27"> </label>
   </p>
   <p>
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" />
+ <label for="subject">Asunto:<br>
+    <input id="subject" name="subject" type="text" size="27">
+    </label>
+  </p>
+    <label for="message">Mensaje: <br>
+    <textarea name="message" id="message" rows="5" cols="30"></textarea>
+    </label>
+  <p>
+    
   </p>
   <p>
-    <label for="comentario">Comentario</label>
-    <textarea name="comentario" id="comentario" cols="45" rows="5"></textarea>
-  </p>
-  <p>
-    <input type="submit" name="btn_enviar" id="btn_enviar" value="Enviar" />
+        <input type="submit" name="submit" value="Enviar" />
   </p>
 </form>
 <p>&nbsp;</p>

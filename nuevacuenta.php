@@ -20,6 +20,12 @@ validarSesion();
     <!-- InstanceBeginEditable name="head" -->
 	  <script src="js/validaciones.js"></script>
 <script src="js/validarCrearCuenta.js"></script>
+<script language="JavaScript">
+function confirmar ( mensaje ) {
+return confirm( mensaje );
+}
+
+   </script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -458,7 +464,7 @@ validarSesion();
 </table>
 </div>
 <div class="boton" align="center">
- <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar"/> <a href="usuarios.php"> <input type="button" value="Cancelar" /> </a>
+ <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" /> <input type="button" value="Cancelar" />
 </div>
 </form>
 <br />

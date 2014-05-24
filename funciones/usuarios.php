@@ -69,12 +69,12 @@ function agregarUsuario(){
 	   $cquery .= " (nombre, apellido, direccion, usuario, contrasena, email, telefono, fax, empresa, cp, pais, ciudad, esAdmin)";
 	   $cquery .= " VALUES ('$cnombre', '$capellidos', '$cdireccion', '$cusuario', '$ccontrasena', '$cmail', '$ctelefono', '$cfax', '$cempresa', '$ccp', '$cpais', '$cciudad', '$cadmin' )";
 	   if (insertarDatos($cquery, $pconexion) )
-	     $cmensaje = "Usuario Registrado";
+	     $cmensaje = "";
 	   else
-	     $cmensaje = "No fue posible registrar el usuario en la base de datos";	 
+	     $cmensaje = "";	 
    }
    else
-     $cmensaje = "Ya existe un usuario con el nombre: $cusuario";
+     $cmensaje = "";
 	 
    cerrarConexion($pconexion);
  

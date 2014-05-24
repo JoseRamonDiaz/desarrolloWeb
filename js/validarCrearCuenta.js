@@ -45,10 +45,13 @@ function validarFrmAgregar(){
     
     var isValid = errores=="";
     if(isValid){
+		alert("¡Usuario Registrado con exito!");
         return true;
+		
     }
     else{
         provideFeedback(errores);
+		alert("Por favor llene los campos obligatorios.");
         return false;
     }
 }
