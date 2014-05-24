@@ -24,6 +24,7 @@ validarSesion();
     <!-- InstanceBeginEditable name="head" -->
     <script src="js/muestraProductos.js"></script>
     <script src="js/cookie.js"></script>
+    <script src="js/cerrarSesion.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -78,7 +79,7 @@ validarSesion();
                         		}
                         ?>
                             	<li>  <a href="perfil.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?> " > Perfil</a></li>
-                            	<li><a href="cerrar_sesion.php">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
+                            	<li><a href="Javascript:cerrarCesion()">Cerrar sesion  ( <?php echo ($_SESSION["cidusuario"]); ?> ) </a></li>
                         <?php
                             } 
                             else {

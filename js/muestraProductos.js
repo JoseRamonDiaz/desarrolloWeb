@@ -54,6 +54,7 @@ function eliminarDeCesta(id){
 
 function actualiza(id, value){
     SetCookie("prod_cantidad"+id,value);
+    actualizaPantalla();
 }
 
 function actualizaPantalla(){
