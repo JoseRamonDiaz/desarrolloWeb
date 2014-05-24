@@ -544,6 +544,9 @@ margin-top:20px;
     visibility: hidden;
 }
 
+#detalles{
+    margin-top: 60px;
+}
 
 #vistaproducto{
 	display:inline-block;

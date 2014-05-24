@@ -22,6 +22,7 @@ validarSesion();
        pic4.src = 'imagenes/VestidosNinas.jpg';
       </script>
     <!-- InstanceBeginEditable name="head" -->
+    <script src="js/muestraProductos.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -150,11 +151,11 @@ validarSesion();
 </tr>
 <tr>
 	<td align="right">Articulos:</td>
-    <td align="center">6</td>
+    <td align="center" id="cantidad_productos"></td>
 </tr>
 <tr>
 	<td align="right">Total:</td>
-    <td align="center">$1350.00</td>
+    <td align="center" id="costo_total"></td>
 </tr>
 <tr>
 	<td colspan="2" align="center"><a href="pagar.php"><button id="btn_pagar" >Pagar</button> </a></td>
@@ -163,7 +164,7 @@ validarSesion();
 </div>
 
 <table id="tablaCarrito" class="tabla">
-  <tr>
+  <!--<tr>
     <th class="primero" scope="col">Artículo</th>
     <th width="10">&nbsp;</th>
     <th scope="col">Talla</th>
@@ -214,7 +215,7 @@ validarSesion();
     <td>$700.00</td>
     <td width="10">&nbsp;</td>
     <td><a href="#"><img id="img_eliminar" src="imagenes/eliminar.png"/></a></td>
-  </tr>
+  </tr>-->
 </table>
 
 <!-- InstanceEndEditable -->
