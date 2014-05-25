@@ -41,10 +41,14 @@ return confirm( mensaje );
 <div class="detalles_producto" align="center"> 
 	
     <div align="center">
+      <form id="frm_agregar" name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    <div id="errorDiv"></div>
+  <p align="center" class="estado"><?php //echo agregarUsuario(); ?></p>
     <table class="tabla1">
+ 
     <tr> </tr>
     
-<td>Nueva Contraseña:</td> <td><input type="password"  name="contrasena" value="<?php echo (isset($_POST["contrasena"]))?$_POST["contrasena"]:""; ?>" id="contrasena"/>
+<td>Nueva Contraseña:</td> <td><input type="password"  name="contrasena"  id="contrasena"/>
     <span id="contrasenaError" class="errorFeedback errorSpan">La contraseña es incorrecta</span> 
 </td>
 
@@ -52,8 +56,13 @@ return confirm( mensaje );
 <td>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena2"/>
     <span id="contrasena2Error" class="errorFeedback errorSpan">La contraseña no coincide</span>
 </td>
-
 </table>
+<div align="center">
+<input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones" />
+
+</div>
+</form>
+
         
    
 </div>

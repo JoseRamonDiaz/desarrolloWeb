@@ -156,6 +156,7 @@ return confirm( mensaje );
     <div id="errorDiv"></div>
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" /> 
 <tr> </tr>
+
 <br />
 <td>ID:</td> <td> <?php echo $adatos["id"]?></td>
 <tr> </tr>

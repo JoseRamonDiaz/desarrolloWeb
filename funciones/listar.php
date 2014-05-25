@@ -82,25 +82,14 @@ function recuperarInfoProducto($cid_producto){
  $pconexion = abrirConexion(); 
  seleccionarBaseDatos($pconexion);
  
- /*$cquery = " SELECT producto.id, producto.precio, producto.nombre, producto.talla, producto.cantidad, producto.color, producto.descripcion, modelo.nombre, producto.imagen";
-  $cquery .= "FROM producto JOIN modelo "; 
- $cquery  .= " ON producto.id_modelo = modelo.id_modelo";
- $cquery .= " WHERE id = '$cid_producto'";*/
+ 
  $cquery = "SELECT producto.id, producto.precio, producto.nombre,  producto.color, producto.descripcion AS descripcion, modelo.nombre AS modelo, producto.imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5
 FROM producto
 JOIN modelo ON producto.id_modelo = modelo.id
 JOIN talla ON talla.id_producto = producto.id
 WHERE producto.id = '$cid_producto'";
 
- /*$cquery = "SELECT producto.id AS Id,";
- $cquery .= " producto.precio AS Precio, producto.nombre AS Nombre,";
- $cquery .= " producto.talla AS Talla, producto.cantidad AS Cantidad,";
- $cquery .= " producto.color AS Color, producto.descripcion AS Descripcion,";
- $cquery .= " modelo.nombre AS Modelo, producto.imagen AS Imagen,";
- $cquery .= " FROM producto, modelo";
- $cquery .= " WHERE  id='$cid_producto' AND producto.id_modelo='modelo.id'";*/
-//var_dump($cquery);
-//die();
+ 
  $adatos = extraerRegistro($pconexion, $cquery); 
  cerrarConexion($pconexion);
   
@@ -109,8 +98,7 @@ return $adatos;
  
 }
 
-//--------------------------------------------------------------------
-
+//-----------------------------------------------
 
 function recuperarInfoProducto2($cid_producto){
   
@@ -123,9 +111,10 @@ function recuperarInfoProducto2($cid_producto){
   $cquery .= "FROM producto JOIN modelo "; 
  $cquery  .= " ON producto.id_modelo = modelo.id_modelo";
  $cquery .= " WHERE id = '$cid_producto'";*/
- $cquery = "SELECT producto.id, producto.precio, producto.nombre,  producto.color, producto.descripcion AS descripcion, modelo.nombre AS modelo, producto.imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5, talla.cantidad1 AS cantidad1, talla.cantidad2 AS cantidad2, talla.cantidad3 AS cantidad3, talla.cantidad4 AS cantidad4, talla.cantidad5 AS cantidad5
+ $cquery = "SELECT producto.id, tipo.nombre_tipo AS categoria, producto.precio, producto.nombre,  producto.color, producto.descripcion AS descripcion, modelo.nombre AS modelo, producto.imagen AS Imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5, talla.cantidad1 AS cantidad1, talla.cantidad2 AS cantidad2, talla.cantidad3 AS cantidad3, talla.cantidad4 AS cantidad4, talla.cantidad5 AS cantidad5
 FROM producto
 JOIN modelo ON producto.id_modelo = modelo.id
+JOIN tipo ON producto.tipo = tipo.id
 JOIN talla ON talla.id_producto = producto.id
 WHERE producto.id = '$cid_producto'";
 
@@ -145,6 +134,7 @@ return $adatos;
 
  
 }
+
 //-----------------------------------------------//
 
 function listarUsuarios(){

@@ -152,7 +152,7 @@ return confirm( mensaje );
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Editar producto </h1>
-<form name="frm_editar" method="post" action="funciones/editarp.php" id="frm_agregar">
+<form name="frm_editar" method="post" action="funciones/editarp.php" enctype="multipart/form-data" id="frm_agregar">
     <div id="errorDiv"></div>
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" />
 <div class="form">
@@ -169,7 +169,7 @@ return confirm( mensaje );
 <span id="precioError" class="errorFeedback errorSpan">El precio es incorrecto</span>
 </td>
 <tr> </tr>
-<td>Categoria:</td> 
+<td>Categoria:  <b><?php echo $adatos["categoria"]?> </b></td> 
 <td> 
 <select name="tipo_id" id="tipo_id">
           <option value="0"></option>
@@ -179,7 +179,7 @@ return confirm( mensaje );
 </td>
 
 <tr> </tr>
-<td>Modelo:</td> 
+<td>Modelo: <b><?php echo $adatos["modelo"]?> </b></td> 
 <td> 
 <select name="modelo_id" id="modelo_id">
           <option value="0" ></option>
@@ -237,7 +237,7 @@ return confirm( mensaje );
     <span id="descripcionError" class="errorFeedback errorSpan">Por favor introduzca una descripción</span>
 </td>
 <tr> </tr>
-<td> Imagen:</td> <td><input type="file" name="imagen" id="imagen" value="<?php echo $adatos["producto.imagen"]?>"/>
+<td> Imagen: <b> <?php echo $adatos["Imagen"]?></b></td> <td><input type="file" name="imagen" id="imagen" value="<?php echo $adatos["Imagen"]?>"/>
     <span id="imagenError" class="errorFeedback errorSpan">Por favor introduzca una imagen</span>
 </td>
 </table>
