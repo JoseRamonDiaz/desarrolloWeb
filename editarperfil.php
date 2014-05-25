@@ -2,7 +2,7 @@
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
 include_once("./funciones/listar.php");
-include_once("./funciones/editar.php");
+include_once("./funciones/perfileditar.php");
 $adatos;
 $adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
 include_once("funciones/mantener_sesion.php");
@@ -154,18 +154,27 @@ return confirm( mensaje );
  <table class="tabla1">
  <h2>Datos Personales</h2>
 <form method="post" action="funciones/perfileditar.php" name="form_editar" id="frm_agregar">
+    <div id="errorDiv"></div>
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" /> 
 <tr> </tr>
 <br />
 <!--<td>ID:</td> <td> <?php //echo $adatos["id"]?></td> -->
 <tr> </tr>
-<td>Nombre:</td> <td> <input type="text" name="nombre_txt" value="<?php echo $adatos["nombre"]?>" /> </td>
+<td>Nombre:</td> <td> <input id="nombre" type="text" name="nombre_txt" value="<?php echo $adatos["nombre"]?>" />
+<span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
+</td>
 <tr> </tr>
-<td>Apellidos:</td> <td><input type="text" name="apellidos_txt" value="<?php echo $adatos["apellido"]?>" /></td>
+<td>Apellidos:</td> <td><input id="apellidos" type="text" name="apellidos_txt" value="<?php echo $adatos["apellido"]?>" />
+<span id="apellidosError" class="errorFeedback errorSpan">Los apellidos son incorrectos</span>
+</td>
 <tr> </tr>
-<td>Email:</td> <td><input type="text" name="mail_txt" value="<?php echo $adatos["email"]?>" /> </td>
+<td>Email:</td> <td><input id="mail" type="text" name="mail_txt" value="<?php echo $adatos["email"]?>" />
+<span id="mailError" class="errorFeedback errorSpan">El correo incorrecto</span>
+</td>
 <tr> </tr>
-<td>Telefono:</td> <td><input type="text" name="telefono_txt" value="<?php echo $adatos["telefono"]?>" /> </td>
+<td>Telefono:</td> <td><input id="telefono" type="text" name="telefono_txt" value="<?php echo $adatos["telefono"]?>" />
+<span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
+</td>
 <tr> </tr>
 <td>Fax:</td> <td><input type="text" name="fax_txt" value="<?php echo $adatos["fax"]?>" /></td>
 </table>
@@ -178,7 +187,9 @@ return confirm( mensaje );
 <br />
 <td>Empresa:</td> <td><input type="text" name="emp_txt" value="<?php echo $adatos["empresa"]?>" /></td>
 <tr> </tr>
-<td>Dirección:</td> <td><input type="text" name="direc_txt" value="<?php echo $adatos["direccion"]?>" /></td>
+<td>Dirección:</td> <td><input id="direc1" type="text" name="direc_txt" value="<?php echo $adatos["direccion"]?>" />
+<span id="direc1Error" class="errorFeedback errorSpan">La dirección es incorrecta</span>
+</td>
 <tr> </tr>
 <td>Codigo postal:</td> <td><input type="text" name="cp_txt" value="<?php echo $adatos["cp"]?>"/></td>
 <tr></tr>
@@ -424,7 +435,9 @@ return confirm( mensaje );
  </td>
 
 <tr></tr>
-<td>Ciudad:</td> <td><input type="text" name="city_txt" value="<?php echo $adatos["ciudad"]?>" /> </td>
+<td>Ciudad:</td> <td><input id="ciudad" type="text" name="city_txt" value="<?php echo $adatos["ciudad"]?>" />
+<span id="ciudadError" class="errorFeedback errorSpan">La ciudad es incorrecta</span>
+</td>
 
 </table>
 </div>
