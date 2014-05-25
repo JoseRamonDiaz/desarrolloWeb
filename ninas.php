@@ -137,7 +137,7 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
-<h1>Productos para niñas </h1>
+
 <div class="panelIzquierda">
     <ul>
         <li> <a href="./vestidosninas.php">Vestidos</a></li>
@@ -145,7 +145,7 @@
         
     </ul>
 </div>
-        
+       <h1>Productos para niñas </h1> 
         <div class="productos">
 <ul class="lista_productos">
 <?php echo listarproductosninas(); ?>

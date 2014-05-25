@@ -136,6 +136,13 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
+		        <div class="panelIzquierda">
+            <ul>
+                <li> <a href="./guayaberascaballeros.php">Guayaberas</a></li>
+                <li> <a href="./pantalonescaballeros.php">Pantalones</a></li>
+                <li> <a href="./zapatoscaballeros.php">Zapatos</a></li>
+            </ul>
+        </div>
 <h1>Guayaberas para caballeros</h1>
 
 <div class="productos">

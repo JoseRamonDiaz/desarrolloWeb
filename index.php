@@ -13,6 +13,7 @@
 <title>Tienda Alux</title>
 <!-- InstanceEndEditable -->
     <!-- InstanceBeginEditable name="head" -->
+	<script src="js/rotador.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -135,35 +136,30 @@
 <div id="centro">
 <div id="rotador" align="center">
 
- <p><img src="imagenes/bienvenido.png" style="width: 450px; height: 250px; border-width: 0px; border-style: solid;"
-        border="0" id="r1" /></p>
+ <p><img src="imagenes/bienvenido.png" width="400px" height="250px" id="r1" /></p>
         </div>
-<table>
-		<tr><td id="imagen1"><a href="guayaberascaballeros.php" 
-	title="Guayabera para caballeros" onmouseover="document.getElementById('r1').src=pic1.src;">
-	<img alt="Guayabera para caballeros" 
-	src="imagenes/GuayaberaCaballeros.jpg" 
-	style="width: 100px; height: 100px; border-width: 0px; border-style: solid;" /> </a></td>
+<table align="center">
+		<tr><td><a href="guayaberascaballeros.php" 
+	title="Guayabera para caballeros">
+	<img id="imagen1" alt="Guayabera para caballeros" 
+	width="100px" height="100px" /> </a></td>
 	
    <td><a href="zapatoscaballeros.php" 
-	title="Zapatos para caballero" onmouseover="document.getElementById('r1').src=pic2.src;">
-	<img alt="Zapatos para caballeros" 
-	src="imagenes/ZapatosCaballero.jpg" 
-	style="width: 100px; height: 100px; border-width: 0px; border-style: solid;"/> </a></td>
+	title="Zapatos para caballero" >
+	<img id="imagen2" alt="Zapatos para caballeros" 
+	width="100px" height="100px"/> </a></td>
   
   
   <td><a href="guayaberasninos.php" 
-	title="Guayabera para niños" onmouseover="document.getElementById('r1').src=pic3.src;">
-	<img alt="Guayabera para niños" 
-	src="imagenes/GuayaberaNinos.jpg" 
-	style="width: 100px; height: 100px; border-width: 0px; border-style: solid;"/> </a></td>
+	title="Guayabera para niños" >
+	<img id="imagen3" alt="Guayabera para niños" 
+	width="100px" height="100px"/> </a></td>
    
    
    <td><a href="vestidosninas.php" 
-	title="Vestidos para niñas" onmouseover="document.getElementById('r1').src=pic4.src;">
-	<img alt="Vestidos para niñas" 
-	src="imagenes/VestidosNinas.jpg" 
-	style="width: 100px; height: 100px; border-width: 0px; border-style: solid;"/> </a></tr>
+	title="Vestidos para niñas" >
+	<img id="imagen4" alt="Vestidos para niñas" 
+	width="100px" height="100px"/> </a></tr>
    
    
    

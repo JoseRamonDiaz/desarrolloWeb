@@ -137,6 +137,13 @@
         
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
+		<div class="panelIzquierda">
+    <ul>
+        <li> <a href="./guayaberasninos.php">Guayaberas</a></li>
+        <li> <a href="./pantalonesninos.php">Pantalones</a></li>
+        <li> <a href="./zapatosninos.php">Zapatos</a></li>
+    </ul>
+</div>
 <h1>Guayaberas para niños</h1>
 
 

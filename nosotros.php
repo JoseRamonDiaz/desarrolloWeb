@@ -135,7 +135,7 @@
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Nosotros</h1>
-<p>	Somos una empresa 100% yucateca, nos dedicamos a la fabricación de ropa tipica del estado como la Guayabera Yucateca, la Filipina y mucho mas. Nuestros diseños son unicos con acabados finos, hacemos de la guayabera un estilo unico creando he innovando un concepto diferente de los demas.</p>
+<p>	Somos una empresa 100% yucateca, nos dedicamos a la fabricación de ropa típica del estado como la Guayabera Yucateca, la Filipina y mucho más. Nuestros diseños son únicos con acabados finos, hacemos de la guayabera un estilo único creando he innovando un concepto diferente de los demás.</p>
 
 
 <!-- InstanceEndEditable -->
