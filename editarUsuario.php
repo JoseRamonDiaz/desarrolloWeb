@@ -173,7 +173,7 @@ return confirm( mensaje );
 </td>
 <tr> </tr>
 <td>Telefono:</td> <td><input id="telefono" type="text" name="telefono_txt" value="<?php echo $adatos["telefono"]?>" />
-    <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
+    <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto, Ejem. 9999764523</span>
 </td>
 <tr> </tr>
 <td>Fax:</td> <td><input type="text" name="fax_txt" value="<?php echo $adatos["fax"]?>" /></td>

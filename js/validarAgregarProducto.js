@@ -9,6 +9,10 @@ function validarForm(){
     var color = document.getElementById("color").value;
     var precio = document.getElementById("precio").value;
     var talla = document.getElementById("talla1").value;
+	 var talla2 = document.getElementById("talla2").value;
+	  var talla3 = document.getElementById("talla3").value;
+	   var talla4 = document.getElementById("talla4").value;
+	    var talla5 = document.getElementById("talla5").value;
     var categoria = document.getElementById("tipo_id").value;
     var modelo = document.getElementById("modelo_id").value;
     var descripcion = document.getElementById("descripcion").value;
@@ -22,6 +26,14 @@ function validarForm(){
         errores.push("precio");
     if(!tallaValida(talla))
         errores.push("talla1");
+		 if(!tallaValida2(talla2))
+        errores.push("talla2");
+		if(!tallaValida3(talla3))
+        errores.push("talla3");
+		if(!tallaValida4(talla4))
+        errores.push("talla4");
+		if(!tallaValida5(talla5))
+        errores.push("talla5");
     if(!colorValido(color))
         errores.push("color");
     if(!categoriaValida(categoria))

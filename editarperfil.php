@@ -173,7 +173,7 @@ return confirm( mensaje );
 </td>
 <tr> </tr>
 <td>Telefono:</td> <td><input id="telefono" type="text" name="telefono_txt" value="<?php echo $adatos["telefono"]?>" />
-<span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
+<span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto, Ejem 9999012345</span>
 </td>
 <tr> </tr>
 <td>Fax:</td> <td><input type="text" name="fax_txt" value="<?php echo $adatos["fax"]?>" /></td>
@@ -444,17 +444,22 @@ return confirm( mensaje );
 <div class="form">
  <table class="tabla1">
  <h2>Cambiar Contraseña</h2>
- <input type="button"  onclick="window.open(this.src,'schermo','toolbar=no,directories=no, menubar=no,width=870,height=200,resizable=yes')" src="contrasena.php?cidusuario=<?php echo ( $_SESSION['cidusuario'])?>" value="Nueva Contraseña" class="botones" />
-
+ <h4>Introduzca su nueva contraseña, si no quiere cambiar su contraseña introduzca su contraseña actual </h4>
 <!--<th>Datos Obligatorios </th> -->
 <tr> </tr>
 <br />
-<!--<td>Usuario:</td> <td><input type="text" name="usuario" value="<?php //echo $adatos["usuario"]?>" /> </td>-->
+<!--<td>Usuario:</td>--> <td><input type="hidden" name="usuario" value="<?php echo $adatos["usuario"]?>" /> </td>
 <br />
 
 <tr> </tr>
-<!--<td>Contraseña:</td> <td><input type="password" name="contrasena" value="<?php // echo $adatos["contrasena"]?>" /></td> -->
+<td>Contraseña:</td> <td><input type="password" name="contrasena" value="<?php  echo $adatos["contrasena"]?>" id="contrasena" />
+<span id="contrasenaError" class="errorFeedback errorSpan">La contraseña es incorrecta</span> 
+</td>
 
+<tr> </tr>
+<td>Confirmar contraseña:</td> <td> <input type="password"  name="contrasena2" value="" id="contrasena2"/>
+    <span id="contrasena2Error" class="errorFeedback errorSpan">La contraseña no coincide</span>
+</td>
 
 </table>
 </div>

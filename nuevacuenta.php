@@ -152,7 +152,7 @@ return confirm( mensaje );
 <div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
-<th> <span >*</span>Datos Obligatorios </th>
+<h4>Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
 <br />
 <td><span >*</span>Nombre:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/>

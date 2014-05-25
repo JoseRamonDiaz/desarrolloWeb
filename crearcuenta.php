@@ -145,9 +145,10 @@ include_once("funciones/usuarios.php");
   <p align="center" class="estado"><?php echo agregarUsuarioNuevo(); ?></p>
 <div class="form">
  <table class="tabla1">
+ 
  <h2>Datos Personales</h2>
  
-<th> <span >*</span>Datos Obligatorios </th>
+<h4>Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
 <br />
 <td><span >*</span>Nombre:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/>
@@ -162,8 +163,8 @@ include_once("funciones/usuarios.php");
     <span id="mailError" class="errorFeedback errorSpan">El correo es incorrecto</span>
 </td>
 <tr> </tr>
-<td><span >*</span>Telefono (10 digitos):</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/>
-    <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto</span>
+<td><span >*</span>Telefono:</td> <td> <input type="text"  name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" id="telefono"/>
+    <span id="telefonoError" class="errorFeedback errorSpan">El teléfono es incorrecto, Ejem. 9999786754</span>
 </td>
 <tr> </tr>
 <td>Fax:</td> <td> <input type="text"  name="fax" value="<?php echo (isset($_POST["fax"]))?$_POST["fax"]:""; ?>" id="fax"/></td>
@@ -173,7 +174,7 @@ include_once("funciones/usuarios.php");
 <div class="form">
  <table class="tabla1">
  <h2>Dirección</h2>
-<th> <span >*</span>Datos Obligatorios </th>
+<h4>Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
 <br />
 <td>Empresa:</td> <td> <input type="text"  name="empresa" value="<?php echo (isset($_POST["empresa"]))?$_POST["empresa"]:""; ?>" id="empresa"/></td>
@@ -431,7 +432,7 @@ include_once("funciones/usuarios.php");
 <div class="form">
  <table class="tabla1">
  <h2>Datos de Usuario</h2>
-<th> <span >*</span>Datos Obligatorios </th>
+<h4>Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
 <br />
 <td><span >*</span>Usuario:</td> <td> <input type="text"  name="usuario" value="<?php echo (isset($_POST["usuario"]))?$_POST["usuario"]:""; ?>" id="usuario"/>

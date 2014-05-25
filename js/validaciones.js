@@ -71,6 +71,62 @@ function tallaValida(talla){
 	}
 }
 
+function tallaValida2(talla2){
+	switch(talla2){
+		case "XL":
+		case "CH":
+		case "M":
+		case "L":
+		case "XXL":
+                case "":
+		return true;
+		default: 
+		return false;
+	}
+}
+
+function tallaValida3(talla3){
+	switch(talla3){
+		case "XL":
+		case "CH":
+		case "M":
+		case "L":
+		case "XXL":
+                case "":
+		return true;
+		default: 
+		return false;
+	}
+}
+
+function tallaValida4(talla4){
+	switch(talla4){
+		case "XL":
+		case "CH":
+		case "M":
+		case "L":
+		case "XXL":
+                case "":
+		return true;
+		default: 
+		return false;
+	}
+}
+
+function tallaValida5(talla5){
+	switch(talla5){
+		case "XL":
+		case "CH":
+		case "M":
+		case "L":
+		case "XXL":
+                case "":
+		return true;
+		default: 
+		return false;
+	}
+}
+
 function categoriaValida(categoria){
     return categoria != 0;
 }

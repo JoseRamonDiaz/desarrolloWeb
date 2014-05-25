@@ -4,9 +4,10 @@
 	session_start();
 	include_once("funciones/agregar.php");
 	include_once("funciones/mantener_sesion.php");
+	include_once("modelo.php");
 
 	
-include_once("modelo.php");
+
 	
 	 function BusquedaGeneral(){
 	 
@@ -86,7 +87,7 @@ else{
 	 
 	 
 	 $busquedas = $_POST["search_name"];
-	$busquedaTalla = $_POST["search_talla"];
+	$busquedaModelo = $_POST["modelo_id"];
 	$busquedaCategoria =  $_POST["tipo_id"];
 	$ccontenido = "";
  //Conexión con la base de datos
@@ -96,12 +97,12 @@ else{
  
  //Construcción de la sentencia SQL
  
- if($busquedas!='' && $busquedaTalla!=''){
-  $cquery = "SELECT producto.id AS Id_Producto, tipo.nombre_tipo AS tipo, producto.precio, producto.nombre AS Nombre,  producto.color AS Color, producto.descripcion, producto.imagen AS Imagen, talla.talla1 AS talla1, talla.talla2 AS talla2, talla.talla3 AS talla3, talla.talla4 AS talla4, talla.talla5 AS talla5
+ if($busquedas!='' && $busquedaModelo!=''){
+  $cquery = "SELECT producto.id AS Id_Producto, producto.precio, producto.nombre AS Nombre,  producto.color AS Color, producto.descripcion, modelo.nombre AS Modelo, producto.imagen AS Imagen 
 FROM producto
-JOIN tipo ON producto.tipo = tipo.id
-JOIN talla ON talla.id_producto = producto.id
-WHERE producto.nombre LIKE '%$busquedas%' AND talla.talla1 LIKE '%$busquedaTalla%' AND tipo.id LIKE '%$busquedaCategoria%' ";
+JOIN modelo ON producto.id_modelo= modelo.id
+JOIN tipo ON producto.tipo=tipo.id
+WHERE (producto.nombre LIKE '%$busquedas%' AND modelo.id LIKE '%$busquedaModelo%' AND tipo.id LIKE '%$busquedaCategoria%')";
 
  //$cquery = "SELECT * FROM producto WHERE nombre LIKE '%$busqueda%' OR precio LIKE '%$busqueda%' ";
  
@@ -125,7 +126,7 @@ $cid_producto = $adatos["Id_Producto"];
 //$ccontenido .= "<ul class=\"producto_cell\">";
 $ccontenido .= "<li class = \"producto\">";
 $ccontenido .= "<div class=\"imagen\">";
-$ccontenido .= "<a href=\"vista.php?cid_producto=".$adatos['Id_Producto']."\"> <img src=imagenes/".$adatos["Imagen"]." width=\"150px\" height= \"150px\"/></a> <br/>";
+$ccontenido .= "<a href=\"vista.php?cid_producto=".$adatos['Id_Producto']."\"> <img src=imagenes/".$adatos["Imagen"]." width=\"110px\" height= \"110px\"/></a> <br/>";
 $ccontenido .= "</div>";
 $ccontenido .= "<div class=\"descripcion\">";
 $ccontenido .= $adatos["Nombre"]."<br />";
@@ -294,13 +295,19 @@ else{
   <tr> </tr>
  <td> <b>Buscar por </b> </td> 
  <tr> </tr>
+ <td>Tiene que Llenar los 3 campos </td>
+ <tr> </tr>
  <td> Nombre 
- <input type="text" onkeydown="this.style.color = '#0000';" onclick="this.value = '';" value="Búsqueda" name="search_name"/>  
+ <input type="text" onkeydown="this.style.color = '#0000';" onclick="this.value = '';" value="" name="search_name"/>  
  </td>
  <td>&nbsp; </td>
- <td>Talla <input type="text" onkeydown="this.style.color = '#0000';" onclick="this.value = '';" value="Búsqueda" name="search_talla"/> </td>
- <td>&nbsp; </td>
- <td> Categoría 
+<td> Modelo
+ <select name="modelo_id" id="modelo_id">
+          <option value="0"></option>
+          <?php echo utf8_encode(  listarmodelos()); ?>
+        </select>
+        <td>&nbsp; </td>
+         <td> Categoría 
  <select name="tipo_id" id="tipo_id">
           <option value="0"></option>
           <?php echo listarTipos(); ?>

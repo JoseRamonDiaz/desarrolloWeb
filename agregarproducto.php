@@ -156,10 +156,8 @@ return confirm( mensaje );
 <div class="form">
  <table class="tabla1">
  <h2>Datos Personales</h2>
-<th> <span >*</span>Datos obligatorios </th>
-
+<h4>Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
-<br />
 <td><span >*</span>Nombre del producto:</td> <td> <input type="text"  name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" id="nombre"/>
     <span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
 </td>
@@ -189,40 +187,40 @@ return confirm( mensaje );
 <tr> </tr>
 
 <td>talla 1:</td> <td><input type="text" name="talla1" id="talla1" value="<?php echo (isset($_POST["talla1"]))?$_POST["talla1"]:""; ?>" />
-<span id="talla1Error" class="errorFeedback errorSpan">La talla es incorrecta</span>
+<span id="talla1Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
 </td>
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 1:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo (isset($_POST["cantidad1"]))?$_POST["cantidad1"]:""; ?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo (isset($_POST["cantidad1"]))?$_POST["cantidad1"]:""; ?>" /> </td>
 
 <tr> </tr>
-<td> talla 2:</td> <td><input type="text" name="talla2" id="tallaS" value="<?php echo (isset($_POST["talla2"]))?$_POST["talla2"]:""; ?>" /> </td>
-
-<tr> </tr>
-
-<td>Cantidad disponible en talla 2:</td> <td><input type="text" name="ctalla2" id="tallaXS" value="<?php echo (isset($_POST["cantidad2"]))?$_POST["cantidad2"]:""; ?>" /> </td>
-
-
-<tr> </tr>
-<td> talla 3:</td> <td><input type="text" name="talla3" id="tallaM" value="<?php echo (isset($_POST["talla3"]))?$_POST["talla3"]:""; ?>" /> </td>
+<td> talla 2:</td> <td><input type="text" name="talla2" id="talla2" value="<?php echo (isset($_POST["talla2"]))?$_POST["talla2"]:""; ?>" /> <span id="talla2Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span> </td>
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 3:</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo (isset($_POST["cantidad3"]))?$_POST["cantidad3"]:""; ?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla2" id="tallaXS" value="<?php echo (isset($_POST["cantidad2"]))?$_POST["cantidad2"]:""; ?>" /> </td>
+
 
 <tr> </tr>
-<td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo (isset($_POST["talla4"]))?$_POST["talla4"]:""; ?>" /> </td>
+<td> talla 3:</td> <td><input type="text" name="talla3" id="talla3" value="<?php echo (isset($_POST["talla3"]))?$_POST["talla3"]:""; ?>" /> <span id="talla3Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span> </td>
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 4:</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo (isset($_POST["cantidad4"]))?$_POST["cantidad4"]:""; ?>" /> </td>
+<td>Cantidad disponible::</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo (isset($_POST["cantidad3"]))?$_POST["cantidad3"]:""; ?>" /> </td>
 
 <tr> </tr>
-<td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo (isset($_POST["talla5"]))?$_POST["talla5"]:""; ?>" /> </td>
+<td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo (isset($_POST["talla4"]))?$_POST["talla4"]:""; ?>" />  <span id="talla4Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span> </td>
 
 <tr> </tr>
-<td>Cantidad disponible en talla 5:</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo (isset($_POST["cantidad5"]))?$_POST["cantidad5"]:""; ?>" /> </td>
+
+<td>Cantidad disponible::</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo (isset($_POST["cantidad4"]))?$_POST["cantidad4"]:""; ?>" /> </td>
+
+<tr> </tr>
+<td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo (isset($_POST["talla5"]))?$_POST["talla5"]:""; ?>" /> <span id="talla5Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span> </td>
+
+<tr> </tr>
+<td>Cantidad disponible::</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo (isset($_POST["cantidad5"]))?$_POST["cantidad5"]:""; ?>" />  </td>
 
 
 <tr> </tr>
@@ -242,7 +240,7 @@ return confirm( mensaje );
 </table>
 </div>
 <div class="boton" align="center">
-  <input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/><a href="productos.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
+  <a href="productos.php"><input type="submit" name="btn_grabar" value="Guardar" id="btn_grabar" class="botones"/></a><a href="productos.php"><input type="button" value="Cancelar" onclick="return confirmar(' ¿Est&aacute; seguro se perderan todos los cambios?')" class="botones" /> </a>
 </div> </form>
 
 

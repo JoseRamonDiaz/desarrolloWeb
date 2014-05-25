@@ -119,7 +119,10 @@ $id = mysql_insert_id($pconexion); //para saber la PK insertada en la tabla TABL
 
 mysql_query("INSERT INTO talla (id_producto, talla1, cantidad1, talla2, cantidad2, talla3, cantidad3, talla4, cantidad4, talla5, cantidad5) VALUES ('$id', '$ctalla1', '$cantidad1', '$ctalla2', '$cantidad2', '$ctalla3', '$cantidad3', '$ctalla4', '$cantidad4', '$ctalla5', '$cantidad5')");
 
+   
 cerrarConexion($pconexion);
+ 
+   
 }
 }
 

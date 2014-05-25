@@ -2,10 +2,11 @@
 include_once("./funciones/config.inc.php"); 
 include_once("./funciones/acceder_base_datos.php");
 include_once("./funciones/listar.php");
+include_once("./funciones/password.php");
+
 	session_start();
-//$adatos;
-//$id = $_GET["cid_producto"];
-//$adatos = recuperarUsuario($id);
+$adatos;
+$adatos = recuperarInfoUsuario2($_GET["cidusuario"]);
 
 ?>
 
@@ -43,12 +44,12 @@ return confirm( mensaje );
     <div align="center">
       <form id="frm_agregar" name="frm_agregar" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
     <div id="errorDiv"></div>
-  <p align="center" class="estado"><?php //echo agregarUsuario(); ?></p>
+  <p align="center" class="estado"><?php echo cambiar(); ?></p>
     <table class="tabla1">
  
     <tr> </tr>
     
-<td>Nueva Contraseña:</td> <td><input type="password"  name="contrasena"  id="contrasena"/>
+<td>Nueva Contraseña:</td> <td><input type="password"  name="contrasena"  id="contrasena" value=""/>
     <span id="contrasenaError" class="errorFeedback errorSpan">La contraseña es incorrecta</span> 
 </td>
 

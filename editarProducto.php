@@ -190,7 +190,7 @@ return confirm( mensaje );
 <tr> </tr>
 
 <td>talla 1:</td> <td><input type="text" name="talla1" id="talla1" value="<?php echo $adatos["talla1"]?>" />
-<span id="talla1Error" class="errorFeedback errorSpan">La talla es incorrecta</span>
+<span id="talla1Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
 </td>
 
 <tr> </tr>
@@ -198,7 +198,9 @@ return confirm( mensaje );
 <td>Cantidad disponible en talla 1:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo $adatos["cantidad1"]?>" /> </td>
 
 <tr> </tr>
-<td> talla 2:</td> <td><input type="text" name="talla2" id="tallaS" value="<?php echo $adatos["talla2"]?>" /> </td>
+<td> talla 2:</td> <td><input type="text" name="talla2" id="talla2" value="<?php echo $adatos["talla2"]?>" /> 
+<span id="talla2Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
+</td>
 
 <tr> </tr>
 
@@ -206,21 +208,27 @@ return confirm( mensaje );
 
 
 <tr> </tr>
-<td> talla 3:</td> <td><input type="text" name="talla3" id="tallaM" value="<?php echo $adatos["talla3"]?>" /> </td>
+<td> talla 3:</td> <td><input type="text" name="talla3" id="talla3" value="<?php echo $adatos["talla3"]?>" /> 
+<span id="talla3Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
+</td>
 
 <tr> </tr>
 
 <td>Cantidad disponible en talla 3:</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo $adatos["cantidad3"]?>" /> </td>
 
 <tr> </tr>
-<td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo $adatos["talla4"]?>" /> </td>
+<td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo $adatos["talla4"]?>" /> 
+<span id="talla4Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
+</td>
 
 <tr> </tr>
 
 <td>Cantidad disponible en talla 4:</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo $adatos["cantidad4"]?>" /> </td>
 
 <tr> </tr>
-<td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo $adatos["talla5"]?>" /> </td>
+<td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo $adatos["talla5"]?>" /> 
+<span id="talla5Error" class="errorFeedback errorSpan">La talla es incorrecta, Ejem. CH,M,L,XL,XXL</span>
+</td>
 
 <tr> </tr>
 <td>Cantidad disponible en talla 5:</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo $adatos["cantidad5"]?>" /> </td>
