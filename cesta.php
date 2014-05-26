@@ -154,8 +154,7 @@ validarSesion();
 </tr>
 </table>
 </div>
-
-<table id="tablaCarrito" class="tabla">&nbsp;
+<table id="tablaCarrito" class="tabla">
   <!--<tr>
     <th class="primero" scope="col">Artículo</th>
     <th width="10">&nbsp;</th>
