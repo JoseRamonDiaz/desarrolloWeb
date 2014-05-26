@@ -14,7 +14,7 @@ function crearContenidoTabla(){
     '<th width="10">&nbsp;</th>'+
     '<th scope="col">Precio unitario</th>'+
     '<th width="10">&nbsp;</th>'+
-    '+<th scope="col">Subtotal</th>'+
+    '<th scope="col">Subtotal</th>'+
     '<th width="10">&nbsp;</th>'+
     '<th class="ultimo" scope="col">&nbsp;</th>'+
     '</tr>';
