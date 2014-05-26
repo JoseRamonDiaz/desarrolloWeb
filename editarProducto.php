@@ -157,7 +157,7 @@ return confirm( mensaje );
 <input type="hidden" value="<?php echo $adatos["id"]?>" name="id" />
 <div class="form">
  <table class="tabla1">
- <h2>Datos Personales</h2>
+ 
 <th> Datos obligatorios </th>
 <tr> </tr>
 <br />
@@ -169,7 +169,7 @@ return confirm( mensaje );
 <span id="precioError" class="errorFeedback errorSpan">El precio es incorrecto</span>
 </td>
 <tr> </tr>
-<td>Categoria:  <b><?php echo $adatos["categoria"]?> </b></td> 
+<td>Categoría:  <b><?php echo $adatos["categoria"]?> </b></td> 
 <td> 
 <select name="tipo_id" id="tipo_id">
           <option value="0"></option>
@@ -195,7 +195,7 @@ return confirm( mensaje );
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 1:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo $adatos["cantidad1"]?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla1" id="tallaXS" value="<?php echo $adatos["cantidad1"]?>" /> </td>
 
 <tr> </tr>
 <td> talla 2:</td> <td><input type="text" name="talla2" id="talla2" value="<?php echo $adatos["talla2"]?>" /> 
@@ -204,7 +204,7 @@ return confirm( mensaje );
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 2:</td> <td><input type="text" name="ctalla2" id="tallaXS" value="<?php echo $adatos["cantidad2"]?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla2" id="tallaXS" value="<?php echo $adatos["cantidad2"]?>" /> </td>
 
 
 <tr> </tr>
@@ -214,7 +214,7 @@ return confirm( mensaje );
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 3:</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo $adatos["cantidad3"]?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla3" id="tallaXS" value="<?php echo $adatos["cantidad3"]?>" /> </td>
 
 <tr> </tr>
 <td>talla 4:</td> <td><input type="text" name="talla4" id="talla4" value="<?php echo $adatos["talla4"]?>" /> 
@@ -223,7 +223,7 @@ return confirm( mensaje );
 
 <tr> </tr>
 
-<td>Cantidad disponible en talla 4:</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo $adatos["cantidad4"]?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla4" id="talla" value="<?php echo $adatos["cantidad4"]?>" /> </td>
 
 <tr> </tr>
 <td>talla 5:</td> <td><input type="text" name="talla5" id="talla5" value="<?php echo $adatos["talla5"]?>" /> 
@@ -231,7 +231,7 @@ return confirm( mensaje );
 </td>
 
 <tr> </tr>
-<td>Cantidad disponible en talla 5:</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo $adatos["cantidad5"]?>" /> </td>
+<td>Cantidad disponible:</td> <td><input type="text" name="ctalla5" id="talla" value="<?php echo $adatos["cantidad5"]?>" /> </td>
 
 
 <tr> </tr>
@@ -241,7 +241,7 @@ return confirm( mensaje );
 <!---<tr> </tr>
 <td><span >*</span>Cantidad:</td> <td><input type="text" name="cantidad" id="cantidad" value="<?php // echo (isset($_POST["cantidad"]))?$_POST["cantidad"]:""; ?>" /> </td> --->
 <tr> </tr>
-<td>Descripcion:</td> <td> <textarea  wrap="soft" name="des" id="descripcion" /><?php echo $adatos["descripcion"]?> </textarea>
+<td>Descripció:</td> <td> <textarea  wrap="soft" name="des" id="descripcion" /><?php echo $adatos["descripcion"]?> </textarea>
     <span id="descripcionError" class="errorFeedback errorSpan">Por favor introduzca una descripción</span>
 </td>
 <tr> </tr>
