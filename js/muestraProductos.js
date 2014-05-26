@@ -32,7 +32,7 @@ function crearContenidoTabla(){
             '<td width="10">&nbsp;</td>'+
             '<td>'+(Number(cantidad))*(Number(precio))+'</td>'+
             '<td width="10">&nbsp;</td>'+
-            '<td><a href="Javascript:eliminarDeCesta('+i+')"><img id="img_eliminar" src="imagenes/eliminar.png"/></a></td></tr>');
+            '<td><a onclick="return confirmar(\'Se eliminará el producto de la cesta, ¿deseas continuar?\')" href="Javascript:eliminarDeCesta('+i+')"><img id="img_eliminar" src="imagenes/eliminar.png"/></a></td></tr>');
     }
     return contenidoTabla;
 }
@@ -93,6 +93,10 @@ function calculaTotal(){
         total += cantidad * precio;
     }
     return total;
+}
+
+function confirmar(mensaje){
+    return confirm(mensaje);
 }
 
 window.onload = function(){
