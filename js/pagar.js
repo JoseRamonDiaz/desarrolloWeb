@@ -10,6 +10,7 @@ function crearMatrizProdCant(){
         var vectorProdCant = new Array();
         vectorProdCant.push(Number(GetCookie("prod_id"+i,document.cookie)));
         vectorProdCant.push(Number(GetCookie("prod_cantidad"+i, document.cookie)));
+        vectorProdCant.push(GetCookie("prod_talla"+i, document.cookie));
         matrizProdCant.push(vectorProdCant);
     }
     return JSON.stringify(matrizProdCant);
