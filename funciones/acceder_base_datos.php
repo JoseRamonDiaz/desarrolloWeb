@@ -72,7 +72,7 @@ function extraerRegistro($pconector, $cquery){
 	if (!$lresult){ 
 		$cerror = "No fue posible recuperar la información de la base de datos.<br>";
 		$cerror .= "SQL: $cquery <br>";
-		$cerror .= "Descripción: ".mysqli_connect_error($pconector);
+		$cerror .= "Descripción: ".mysql_error($pconector);
 		die($cerror);    
 	}
 	else{
@@ -93,7 +93,7 @@ function editarDatos($pconector, $cquery){
  if (!$lresult){
    $cerror = "Ocurrió un error al acceder a la base de datos.<br>";
    $cerror .= "SQL: $cquery <br>";
-   $cerror .= "Descripción: ". mysqli_connect_error($pconector);
+   $cerror .= "Descripción: ". mysql_error($pconector);
    die($cerror);
  }
  else 
