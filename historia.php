@@ -89,7 +89,7 @@
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos por nombre y precio" name="search"/> 
 </FORM>
    
                 </div>
@@ -135,6 +135,11 @@
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Historia de Yucatán</h1>
+
+<p> 
+Yucatán es uno de los treinta y un estados que, junto con el Distrito Federal, conforman las treinta y dos entidades federativas de México. El estado se localiza en el sureste de México y en el norte de la península de Yucatán. Se encuentra limitado al norte por el golfo de México, al sureste por el estado de Quintana Roo y al suroeste por el estado de Campeche.
+
+</p>
 <!-- InstanceEndEditable -->
         </div>
         

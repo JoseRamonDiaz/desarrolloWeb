@@ -106,7 +106,7 @@ return confirm( mensaje );
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos por nombre y precio" name="search"/> 
 </FORM>
    
                 </div>
@@ -158,31 +158,32 @@ return confirm( mensaje );
 <div class="form">
  <table class="tabla1">
  
-<th> Datos obligatorios </th>
+<h4> Los campos marcados con  <span >*</span> son obligatorios</h4>
 <tr> </tr>
 <br />
-<td>Nombre del producto:</td> <td> <input type="text"  name="nombre" value="<?php echo $adatos["nombre"]?>" id="nombre"/>
+<td><span >*</span>Nombre del producto:</td> <td> <input type="text"  name="nombre" value="<?php echo $adatos["nombre"]?>" id="nombre"/>
     <span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span>
 </td>
 <tr> </tr>
-<td>Precio:</td> <td><input type="text"  name="precio" value="<?php echo $adatos["precio"]?>" id="precio"/>
+<td><span >*</span>Precio:</td> <td><input type="text"  name="precio" value="<?php echo $adatos["precio"]?>" id="precio"/>
 <span id="precioError" class="errorFeedback errorSpan">El precio es incorrecto</span>
 </td>
 <tr> </tr>
-<td>Categoría:  <b><?php echo $adatos["categoria"]?> </b></td> 
+<td><span >*</span>Categoría:  <b><?php echo $adatos["categoria"]?> </b></td> 
 <td> 
 <select name="tipo_id" id="tipo_id">
-          <option value="0"></option>
+
+          <option value="0" selected="selected">Seleccionar una categoría</option>
           <?php echo listarTipos(); ?>
         </select>
     <span id="tipo_idError" class="errorFeedback errorSpan">Por favor seleccione una categoria</span>
 </td>
 
 <tr> </tr>
-<td>Modelo: <b><?php echo $adatos["modelo"]?> </b></td> 
+<td><span >*</span>Modelo: <b><?php echo $adatos["modelo"]?> </b></td> 
 <td> 
 <select name="modelo_id" id="modelo_id">
-          <option value="0" ></option>
+          <option value="0" selected="selected" >Seleccionar un modelo</option>
           <?php echo utf8_encode(listarmodelos()); ?>
         </select>
     <span id="modelo_idError" class="errorFeedback errorSpan">Por favor seleccione un modelo</span>
@@ -241,11 +242,11 @@ return confirm( mensaje );
 <!---<tr> </tr>
 <td><span >*</span>Cantidad:</td> <td><input type="text" name="cantidad" id="cantidad" value="<?php // echo (isset($_POST["cantidad"]))?$_POST["cantidad"]:""; ?>" /> </td> --->
 <tr> </tr>
-<td>Descripció:</td> <td> <textarea  wrap="soft" name="des" id="descripcion" /><?php echo $adatos["descripcion"]?> </textarea>
+<td><span >*</span>Descripción:</td> <td> <textarea  wrap="soft" name="des" id="descripcion" /><?php echo $adatos["descripcion"]?> </textarea>
     <span id="descripcionError" class="errorFeedback errorSpan">Por favor introduzca una descripción</span>
 </td>
 <tr> </tr>
-<td> Imagen: <b> <?php echo $adatos["Imagen"]?></b></td> <td><input type="file" name="imagen" id="imagen" value="<?php echo $adatos["Imagen"]?>"/>
+<td><span >*</span>Imagen: <b> <?php echo $adatos["Imagen"]?></b></td> <td><input type="file" name="imagen" id="imagen" value="<?php echo $adatos["Imagen"]?>"/>
     <span id="imagenError" class="errorFeedback errorSpan">Por favor introduzca una imagen</span>
 </td>
 </table>

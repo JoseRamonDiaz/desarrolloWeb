@@ -90,7 +90,7 @@ validarSesion();
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos por nombre y precio" name="search"/> 
 </FORM>
    
                 </div>

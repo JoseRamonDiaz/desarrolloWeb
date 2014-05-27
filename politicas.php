@@ -88,7 +88,7 @@
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos por nombre y precio" name="search"/> 
 </FORM>
    
                 </div>
@@ -134,6 +134,12 @@
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Politicas de Privacidad</h1>
+
+ <h4>Alux a través de su sitio web www.alux.com</h4>
+
+<p>Alux recopila la dirección IP de su ISP (Internet Service Provider o Proveedor de Servicio de Internet, por sus siglas en inglés) a través de diferentes herramientas de estadística o analytics, las cuales también recaba información específica del usuario, como país en que reside, ciudad, lenguaje predeterminado del explorador, tipo del explorador, resolución del monitor, sistema operativo, páginas visitadas de Alux, hora y duración de visitas. Todo esto con el fin de tener una estadística que nos permita conocer las preferencias de los usuarios que navegan por nuestros sitios. </p>
+
+<p>Alux no proporciona información de usuarios a terceros, como pueden ser direcciones de correo electrónico u otros datos, salvo que esto sea requerido por la ley y/o alguna orden de carácter judicial tratándose de algún tema en el que alguno de nuestros socios, empleados y/o usuarios se haya visto afectados de alguna manera. </p>
 
 <!-- InstanceEndEditable -->
         </div>

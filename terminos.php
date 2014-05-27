@@ -88,7 +88,7 @@
                 <div id="busqueda"> 
                     <div id="botonbusqueda"> </div>
                     <FORM METHOD=GET ACTION="buscar.php ">
-   <input type="text"  placeholder="Buscar productos" name="search"/> 
+   <input type="text" onkeydown="this.style.color = '#ffffff';" onclick="this.value = '';" value="Buscar productos por nombre y precio" name="search"/> 
 </FORM>
    
                 </div>
@@ -134,7 +134,9 @@
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 
 <h1>Terminos y Condiciones</h1>
-
+<p> ®Derechos Reservados 2014. Alux, se reserva el uso de parte del contenido publicado en sus sitios de Internet a través de las direcciones www.alux.com mediante el siguiente convenio para la persona que navegue a través de nuestros sitios, en adelante el “usuario”.</p 
+<h4>Logotipos </h4>
+<p>Queda prohibida la reproducción total o parcial de cualquiera de los logotipos de Alux y sus empresas, con fines de lucro, agravio, fraude y cualquier otra actividad no relacionada con Alux y que pudiera infringir la Constitución Política de los Estados Unidos Mexicanos y las leyes de la materia. b) Ninguno de los logotipos de Alux podrá ser usado, bajo ninguna circunstancia, sin permiso escrito y previo análisis del fin para el cual será destinado </p>
 
 
 <!-- InstanceEndEditable -->
