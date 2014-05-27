@@ -141,7 +141,7 @@ validarSesion();
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1>Tarjeta de crédito</h1>
-<form id="credit card" action="xyz" method="post" > 
+<form id="credit card" action="funciones/pagar.php" method="post" onsubmit="pagar()"> 
 <div class="block"> <label for="cardNumber">Nombre:</label> <input type="text" size="40" id="name" name="nombre" /> </div> 
 <div class="block"> <label for="cardNumber">Apellido(s):</label> <input type="text" size="40" id="name" name="apellido" /> </div>
 <div class="block"> <label for="address">Dirección:</label> <input type="text" size="40" id="Text1" name="direc" /> </div> 
@@ -156,9 +156,9 @@ validarSesion();
 <div class="block"> <label for="cardNumber">Código de verificación:</label> <input type="password" size="3" id="cardNumber" name="cardNumber" /> </div> 
 <div> <select name="monthExpires" > <option value="" SELECTED>--Mes de Expiración-- <option value="01">Enero(01) <option value="02">Febrero (02) <option value="03">Marzo (03) </select> / <select name="yearExpires"> <option value="" SELECTED>--Año de expiración-- <option value="10">2010 <option value="11">2011 <option value="12">2012 <option value="13">2013 </select> </div>
 <input type="hidden" value="" id="prodCant">            
-</form>
+
 <div class="block"> <label for="address" id="label_total">Total:</label></div>
- <p><input name="Submit" type="submit" value="Procesando tarjeta de crédito" class="botones"></p>
+ <p><input name="Submit" type="submit" value="Procesando tarjeta de crédito" class="botones"></p></form>
 
 
 

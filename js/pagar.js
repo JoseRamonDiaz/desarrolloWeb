@@ -16,6 +16,11 @@ function crearMatrizProdCant(){
     return JSON.stringify(matrizProdCant);
 }
 
+function pagar(){
+    Vaciar();
+    return true;
+}
+
 function crearInputHidden(){
     var inputHidden = document.getElementById("prodCant");   
     inputHidden.setAttribute("value",crearMatrizProdCant());
