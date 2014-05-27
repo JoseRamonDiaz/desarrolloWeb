@@ -21,6 +21,7 @@ validarSesion();
     <!-- InstanceBeginEditable name="head" -->
     <script src="js/cookie.js"></script>
     <script src="js/pagar.js"></script>
+    <script src="js/validaciones.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -141,21 +142,31 @@ validarSesion();
         <div id="content">
         <!-- InstanceBeginEditable name="RegionParaEditar" -->
 <h1>Tarjeta de crédito</h1>
-<form id="credit card" action="funciones/pagar.php" method="post" onsubmit="pagar()"> 
-<div class="block"> <label for="cardNumber">Nombre:</label> <input type="text" size="40" id="name" name="nombre" /> </div> 
-<div class="block"> <label for="cardNumber">Apellido(s):</label> <input type="text" size="40" id="name" name="apellido" /> </div>
-<div class="block"> <label for="address">Dirección:</label> <input type="text" size="40" id="Text1" name="direc" /> </div> 
+<form id="credit_card" action="funciones/pagar.php" method="post"> 
+    <div id="errorDiv"></div>
+<div class="block"> <label for="cardNumber">Nombre:</label> <input type="text" size="40" id="nombre" name="nombre" />
+    <span id="nombreError" class="errorFeedback errorSpan">El nombre es incorrecto</span> </div> 
+<div class="block"> <label for="cardNumber">Apellido(s):</label> <input type="text" size="40" id="apellidos" name="apellido" />
+<span id="apellidosError" class="errorFeedback errorSpan">Los apellidos son incorrectos</span></div>
+<div class="block"> <label for="address">Dirección:</label> <input type="text" size="40" id="direc1" name="direc" />
+<span id="direc1Error" class="errorFeedback errorSpan">La dirección es incorrecta</span></div> 
 <div><label>Tipo de Tarjeta</label> 
-<select>
+<select id="tipoTarjeta">
 <option value="0" SELECTED>Seleccionar una tarjeta</option>
 <option value="1">Master Card</option>
 <option> Visa</option>
 <option>American Express</option>
- </select> </div>
-<div class="block"> <label for="cardNumber">Número de tarjeta de crédito:</label> <input type="password" size="12" id="cardNumber" name="cardNumber" /> </div> 
-<div class="block"> <label for="cardNumber">Código de verificación:</label> <input type="password" size="3" id="cardNumber" name="cardNumber" /> </div> 
-<div> <select name="monthExpires" > <option value="" SELECTED>--Mes de Expiración-- <option value="01">Enero(01) <option value="02">Febrero (02) <option value="03">Marzo (03) </select> / <select name="yearExpires"> <option value="" SELECTED>--Año de expiración-- <option value="10">2010 <option value="11">2011 <option value="12">2012 <option value="13">2013 </select> </div>
-<input type="hidden" value="" id="prodCant" name="prodCant">            
+ </select><span id="tipoTarjetaError" class="errorFeedback errorSpan">Seleccione un tipo de tarjeta</span> </div>
+<div class="block"> <label for="cardNumber">Número de tarjeta de crédito:</label> <input type="password" size="12" id="cardNumber" name="cardNumber" />
+<span id="cardNumberError" class="errorFeedback errorSpan">El número de la tarjeta es incorrecto</span></div> 
+<div class="block"> <label for="cardNumber">Código de verificación:</label> <input type="password" size="3" id="codVerif" name="cardNumber" />
+<span id="codVerifError" class="errorFeedback errorSpan">El código de verificación es incorrecto</span></div> 
+<div> <select name="monthExpires" id="mes"> <option value="" SELECTED>--Mes de Expiración-- <option value="01">Enero(01) <option value="02">Febrero (02) <option value="03">Marzo (03) </select>
+     <span id="mesError" class="errorFeedback errorSpan">Seleccione un mes</span>
+    / <select name="yearExpires" id="anio"> <option value="" SELECTED>--Año de expiración-- <option value="10">2010 <option value="11">2011 <option value="12">2012 <option value="13">2013 </select> 
+                            <span id="anioError" class="errorFeedback errorSpan">Seleccione un año</span>
+                            </div>
+<input type="hidden" value="" id="prodCant" name="prodCant">
 
 <div class="block"> <label for="address" id="label_total">Total:</label></div>
  <p><input name="Submit" type="submit" value="Procesando tarjeta de crédito" class="botones"></p></form>

@@ -17,8 +17,53 @@ function crearMatrizProdCant(){
 }
 
 function pagar(){
-    Vaciar();
-    return true;
+    var esValido = validarFormPagar();
+    if(esValido)
+        Vaciar();
+    return esValido;
+}
+
+function validarFormPagar(){
+    var errores = new Array();
+    
+    var nombre = document.getElementById("nombre").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var codVerif = document.getElementById("codVerif").value;
+    var cardNumber = document.getElementById("cardNumber").value;
+    var direccion = document.getElementById("direc1").value;
+    var tipoTarjeta = document.getElementById("tipoTarjeta").value;
+    var mes = document.getElementById("mes").value;
+    var anio = document.getElementById("anio").value;
+    //var ciudad = document.getElementById("ciudad").value;
+    
+    removeFeedback();
+    
+    if(!nombreValido(nombre))
+        errores.push("nombre");
+    if(!nombreValido(apellidos))
+        errores.push("apellidos");
+    if(isEmpty(codVerif))
+        errores.push("codVerif");
+    if(isEmpty(cardNumber))
+        errores.push("cardNumber");
+    if(!direccionValida(direccion))
+        errores.push("direc1");
+    if(!tarjetaValida(tipoTarjeta))
+        errores.push("tipoTarjeta"); 
+    if(mes == 0)
+        errores.push("mes");
+    if(anio == 0)
+        errores.push("anio");
+    
+    var isValid = errores=="";
+    if(isValid){
+        Vaciar();
+        return true;	
+    }
+    else{
+        provideFeedback(errores);
+        return false;
+    }
 }
 
 function crearInputHidden(){
@@ -31,6 +76,8 @@ function verificarProdCant(){
 }
 
 window.onload = function(){
+    //No funciona si el evento se llama con pagar()
+    document.getElementById("credit_card").onsubmit = pagar;
     muestraTotal();
     crearInputHidden();
     verificarProdCant();

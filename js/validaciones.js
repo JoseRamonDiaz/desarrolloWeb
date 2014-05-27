@@ -173,6 +173,10 @@ function pass2Valido(pass, pass2){
     return pass == pass2;
 }
 
+function tarjetaValida(tarjeta){
+    return tarjeta != 0;
+}
+
 function isEmpty(cadena){
 	return cadena == "";
 }
