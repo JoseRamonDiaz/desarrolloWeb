@@ -37,7 +37,7 @@ include_once("funciones/usuarios.php");
                     ?>
                                 
                                 <li> <a href="cesta.php">Cesta</a></li>
-                                <li> <a href="historial.php">Transacciones</a></li> 
+                                <!--<li> <a href="../historial.php">Transacciones</a></li> -->
                                 <li> <a href="contacto.php" >Contacto</a></li>
 					<?php
                     		}
